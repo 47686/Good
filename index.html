@@ -28,8 +28,6 @@
     * { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior:smooth; }
     body { font-family:'Noto Sans SC',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
-
-    /* ===== SCROLLBAR ===== */
     ::-webkit-scrollbar{width:6px} ::-webkit-scrollbar-track{background:#f1f5f9} ::-webkit-scrollbar-thumb{background:var(--primary-light);border-radius:9px}
 
     /* ===== NAV ===== */
@@ -54,9 +52,7 @@
       background: linear-gradient(135deg, #eef4ff 0%, #f0f9ff 40%, #ede9fe 100%);
       position:relative; overflow:hidden; padding-top:64px;
     }
-    .hero-bg-circle {
-      position:absolute; border-radius:50%; opacity:.12; pointer-events:none;
-    }
+    .hero-bg-circle { position:absolute; border-radius:50%; opacity:.12; pointer-events:none; }
     .hero-bg-circle:nth-child(1){ width:500px;height:500px;background:var(--primary);top:-100px;right:-100px; animation:float 8s ease-in-out infinite; }
     .hero-bg-circle:nth-child(2){ width:300px;height:300px;background:var(--accent2);bottom:-50px;left:-80px; animation:float 10s ease-in-out infinite reverse; }
     .hero-bg-circle:nth-child(3){ width:200px;height:200px;background:var(--accent);top:40%;left:25%; animation:float 12s ease-in-out infinite; }
@@ -103,10 +99,7 @@
     /* ===== SECTIONS ===== */
     section { padding:80px 0; }
     .section-inner { max-width:1100px; margin:0 auto; padding:0 24px; }
-    .section-title {
-      font-size:2rem; font-weight:800; margin-bottom:8px;
-      background:linear-gradient(135deg,var(--primary),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-    }
+    .section-title { font-size:2rem; font-weight:800; margin-bottom:8px; background:linear-gradient(135deg,var(--primary),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
     .section-subtitle { color:var(--text2); margin-bottom:40px; font-size:.95rem; }
     .section-line { width:48px; height:4px; border-radius:4px; background:linear-gradient(90deg,var(--primary),var(--accent)); margin:8px 0 32px; }
 
@@ -128,11 +121,7 @@
     .timeline { position:relative; padding-left:32px; }
     .timeline::before { content:''; position:absolute; left:8px; top:8px; bottom:0; width:2px; background:linear-gradient(180deg,var(--primary),var(--accent)); border-radius:2px; }
     .tl-item { position:relative; margin-bottom:36px; }
-    .tl-dot {
-      position:absolute; left:-28px; top:6px; width:16px; height:16px;
-      border-radius:50%; background:var(--primary); border:3px solid #fff;
-      box-shadow:0 0 0 3px rgba(37,99,235,.2);
-    }
+    .tl-dot { position:absolute; left:-28px; top:6px; width:16px; height:16px; border-radius:50%; background:var(--primary); border:3px solid #fff; box-shadow:0 0 0 3px rgba(37,99,235,.2); }
     .tl-card { background:var(--card); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); border:1px solid var(--border); transition:.3s; }
     .tl-card:hover { transform:translateX(4px); box-shadow:var(--shadow2); }
     .tl-header { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:10px; flex-wrap:wrap; }
@@ -159,8 +148,15 @@
     .skill-bar { height:6px; background:var(--border); border-radius:3px; overflow:hidden; }
     .skill-fill { height:100%; border-radius:3px; background:linear-gradient(90deg,var(--primary),var(--accent)); transition:width 1.2s ease; width:0; }
 
-    /* ===== AWARDS ===== */
+    /* ===== AWARDS - 德智体美劳 ===== */
     #awards { background:var(--bg); }
+    .awards-tabs { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; }
+    .awards-tab {
+      padding:8px 20px; border-radius:24px; font-size:.85rem; font-weight:600; cursor:pointer;
+      background:var(--card); border:2px solid var(--border); color:var(--text2); transition:.2s;
+    }
+    .awards-tab:hover { border-color:var(--primary); color:var(--primary); }
+    .awards-tab.active { background:var(--primary); color:#fff; border-color:var(--primary); }
     .awards-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
     .award-card {
       background:var(--card); border-radius:var(--radius); padding:22px; border:1px solid var(--border);
@@ -172,6 +168,7 @@
     .award-icon.blue { background:linear-gradient(135deg,#eff6ff,#bfdbfe); }
     .award-icon.purple { background:linear-gradient(135deg,#f5f3ff,#ddd6fe); }
     .award-icon.green { background:linear-gradient(135deg,#ecfdf5,#a7f3d0); }
+    .award-icon.red { background:linear-gradient(135deg,#fee2e2,#fca5a5); }
     .award-body h4 { font-size:.95rem; font-weight:700; color:var(--text); margin-bottom:4px; }
     .award-body p { font-size:.82rem; color:var(--text2); }
     .award-date { font-size:.75rem; color:var(--text3); margin-top:6px; font-weight:600; }
@@ -267,7 +264,6 @@
     .tag-cyan { background:rgba(6,182,212,.08); color:#0891b2; }
     .tag-purple { background:rgba(139,92,246,.08); color:var(--accent2); }
     .tag-green { background:rgba(16,185,129,.08); color:#059669; }
-    .progress-ring { transition:stroke-dashoffset 1.2s ease; }
   </style>
 </head>
 <body>
@@ -286,9 +282,7 @@
       <li><a href="#matcher">岗位匹配</a></li>
       <li><a href="#contact">联系我</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="菜单">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -301,22 +295,22 @@
     <div class="hero-avatar">李</div>
     <div class="hero-text">
       <h1>你好，我是<br><span class="name">黎永恩</span></h1>
-      <p class="tagline">人力资源管理专业 · 2026届应届毕业生 · 广东韶关</p>
+      <p class="tagline">人力资源管理专业 · 2026届应届毕业生 · CPA 3.83/5（专业前20%）</p>
       <div class="hero-badges">
-        <span class="badge">🎓 韶关学院 HRM</span>
-        <span class="badge accent">💼 HR → HRBP 职业路径</span>
-        <span class="badge purple">✍️ 小红书博主 133+ 粉丝</span>
-        <span class="badge">📊 组织管理达人</span>
+        <span class="badge">🎓 韶关学院 商学院 HRM</span>
+        <span class="badge accent">🔴 中共党员</span>
+        <span class="badge purple">🏆 综测 2/31（前10%）</span>
+        <span class="badge">📊 优秀毕业生</span>
       </div>
       <div class="hero-btns">
         <a href="#matcher" class="btn btn-primary">🤖 智能岗位匹配</a>
         <a href="#experience" class="btn btn-outline">查看我的经历</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><div class="num">3+</div><div class="label">实习月数</div></div>
-        <div class="stat"><div class="num">133+</div><div class="label">小红书粉丝</div></div>
-        <div class="stat"><div class="num">1403+</div><div class="label">获赞数</div></div>
-        <div class="stat"><div class="num">2W+</div><div class="label">单篇浏览量</div></div>
+        <div class="stat"><div class="num">3.83</div><div class="label">CPA / 5.0</div></div>
+        <div class="stat"><div class="num">17+</div><div class="label">获奖荣誉</div></div>
+        <div class="stat"><div class="num">2/31</div><div class="label">综测排名</div></div>
+        <div class="stat"><div class="num">102h</div><div class="label">i志愿时长</div></div>
       </div>
     </div>
   </div>
@@ -330,15 +324,15 @@
     <div class="about-grid">
       <div>
         <p class="about-text">
-          <p>我是黎永恩，就读于韶关学院人力资源管理专业（2026届应届生），拥有扎实的HR理论基础与丰富的学生组织管理实践经验。</p>
-          <p>在校期间，我担任宣传部副部长、团支书及社团会长，主导了多项组织建设工作，其中招新活动带动简历数量创历史新高，展现出我在招聘宣传与团队动员方面的综合能力。</p>
-          <p>在盈宇社工服务中心完成3个月HR实习，独立制作《排班与考勤操作指南》PPT，具备实际人事管理操作经验。毕业论文聚焦"AI素养对知识型员工创新行为的影响"，体现跨领域思维能力。</p>
-          <p>职业规划清晰：先深耕HR基础岗，再逐步转型为HRBP，以业务视角赋能组织发展。</p>
+          <p>我是黎永恩，韶关学院商学院人力资源管理专业2026届应届毕业生，<strong>中共党员</strong>。CPA 3.83/5.0（专业前20%），综测排名 2/31（专业前10%），获评"优秀毕业生""三好学生"等荣誉称号。</p>
+          <p>在校期间担任<strong>青年志愿者协会会长</strong>、<strong>班级团支书</strong>，主导协会年度招新并筛选录用70+名新成员，组织策划多场公益活动并带领协会获评校级"优秀社团"。在韶关学院商学院担任<strong>教务助理1年+</strong>，负责300+名毕业生论文格式审核、学分核对等核心教务工作。</p>
+          <p>在盈宇社会工作服务中心完成<strong>3个月HR实习</strong>，独立负责月度考勤核算（连续3个月零差错），协助30+场培训。获全国高校商业精英品牌策划挑战赛<strong>全国总决赛二等奖、三等奖</strong>各1项。</p>
+          <p>具备<strong>推文撰写、海报设计、PPT制作</strong>等全栈内容能力，CET-4、普通话二甲，C1驾驶证。爱好：打羽毛球（全院团体第1名）、唱歌。</p>
         </p>
         <div class="goals-card" style="margin-top:20px">
           <h4>🎯 职业规划</h4>
-          <div class="goal-item"><div class="goal-dot"></div><div>短期：进入HR领域，夯实招聘/员工关系/薪酬核算等模块基础</div></div>
-          <div class="goal-item"><div class="goal-dot"></div><div>中期：积累2-3年实战经验，考取相关证书，向HRBP方向转型</div></div>
+          <div class="goal-item"><div class="goal-dot"></div><div>短期：进入HR/行政领域，夯实招聘、员工关系、薪酬核算等模块基础</div></div>
+          <div class="goal-item"><div class="goal-dot"></div><div>中期：积累2-3年实战经验，向HRBP方向转型</div></div>
           <div class="goal-item"><div class="goal-dot"></div><div>长期：以业务伙伴视角参与组织战略，成为人才管理专家</div></div>
           <div class="goal-item"><div class="goal-dot"></div><div>学历提升：报考双证在职研究生（学历+学位）深造</div></div>
         </div>
@@ -346,13 +340,15 @@
       <div>
         <div class="about-info">
           <div class="info-item"><div class="info-label">姓名</div><div class="info-val">黎永恩</div></div>
+          <div class="info-item"><div class="info-label">出生年月</div><div class="info-val">2003.12</div></div>
+          <div class="info-item"><div class="info-label">政治面貌</div><div class="info-val">中共党员</div></div>
+          <div class="info-item"><div class="info-label">籍贯</div><div class="info-val">广东肇庆</div></div>
+          <div class="info-item"><div class="info-label">现居地</div><div class="info-val">广东佛山</div></div>
+          <div class="info-item"><div class="info-label">院校</div><div class="info-val">韶关学院 商学院</div></div>
           <div class="info-item"><div class="info-label">专业</div><div class="info-val">人力资源管理</div></div>
-          <div class="info-item"><div class="info-label">院校</div><div class="info-val">韶关学院</div></div>
-          <div class="info-item"><div class="info-label">毕业时间</div><div class="info-val">2026年（应届）</div></div>
-          <div class="info-item"><div class="info-label">所在地</div><div class="info-val">广东省</div></div>
-          <div class="info-item"><div class="info-label">到岗时间</div><div class="info-val">最早 2026年5月</div></div>
-          <div class="info-item"><div class="info-label">求职方向</div><div class="info-val">HR / 行政专员</div></div>
-          <div class="info-item"><div class="info-label">研究方向</div><div class="info-val">AI素养与员工创新</div></div>
+          <div class="info-item"><div class="info-label">CPA / 排名</div><div class="info-val">3.83/5.0 · 综测2/31</div></div>
+          <div class="info-item"><div class="info-label">毕业时间</div><div class="info-val">2026年6月</div></div>
+          <div class="info-item"><div class="info-label">爱好</div><div class="info-val">打羽毛球、唱歌</div></div>
         </div>
       </div>
     </div>
@@ -366,78 +362,80 @@
     <div class="section-line"></div>
     <p class="section-subtitle">将每一段经历转化为成长，用行动证明价值。</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+
+      <!-- LEFT COLUMN - 实习+竞赛 -->
       <div>
-        <h3 style="font-size:1rem;font-weight:800;color:var(--primary);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border)">💼 实习经历</h3>
+        <h3 style="font-size:1rem;font-weight:800;color:var(--primary);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border)">💼 实习与教务经历</h3>
         <div class="timeline">
+          <!-- 盈宇实习 -->
           <div class="tl-item">
             <div class="tl-dot"></div>
             <div class="tl-card">
               <div class="tl-header">
-                <div>
-                  <div class="tl-title">HR实习生</div>
-                  <div class="tl-org">盈宇社工服务中心</div>
-                </div>
-                <div class="tl-date">3个月实习</div>
+                <div><div class="tl-title">HR实习生</div><div class="tl-org">盈宇社会工作服务中心</div></div>
+                <div class="tl-date">2026.1 - 2026.4</div>
               </div>
               <div class="tl-achievements">
-                <div class="tl-ach">独立制作《排班与考勤操作指南》PPT，规范内部人事管理流程</div>
-                <div class="tl-ach">协助日常人事事务，熟悉考勤、档案、员工关系管理流程</div>
-                <div class="tl-ach">参与员工入职培训材料编制，具备一定培训体系搭建意识</div>
+                <div class="tl-ach">独立负责月度全员考勤核算与假期数据管理，<strong>连续3个月数据零差错</strong>，输出标准化考勤报表6份，推动核算流程数字化</div>
+                <div class="tl-ach">协助组织2场百人级大型活动，负责参训通知发放、物资筹备及现场流程跟进，归档活动照片及视频素材100+，累计服务超200+人次</div>
+                <div class="tl-ach">协助开展30+场课程培训，累计服务300+人次，编发培训周报4期；独立负责宣传物料设计</div>
               </div>
-              <div class="tl-tags">
-                <span class="tl-tag">考勤管理</span>
-                <span class="tl-tag">员工关系</span>
-                <span class="tl-tag">PPT制作</span>
-                <span class="tl-tag">流程规范</span>
+              <div class="tl-tags"><span class="tl-tag">考勤管理</span><span class="tl-tag">员工关系</span><span class="tl-tag">培训组织</span><span class="tl-tag">流程规范</span><span class="tl-tag">数字化</span></div>
+            </div>
+          </div>
+          <!-- 教务助理 -->
+          <div class="tl-item">
+            <div class="tl-dot" style="background:#0891b2"></div>
+            <div class="tl-card">
+              <div class="tl-header">
+                <div><div class="tl-title">教务助理</div><div class="tl-org">韶关学院商学院</div></div>
+                <div class="tl-date">2023.9 - 2024.10</div>
               </div>
+              <div class="tl-achievements">
+                <div class="tl-ach">全面辅助教务处老师完成日常行政事务，包括文档收发、通知传达、资料印制、盖章审核等，确保流程规范及时无遗漏</div>
+                <div class="tl-ach">负责全院<strong>300+名毕业生</strong>的论文格式审核，严格按学校规范逐篇检查标题、摘要、目录、引用等细节</div>
+                <div class="tl-ach">协助老师完成学分核对，对照培养方案核查毕业生学分修读情况，整理异常名单并反馈至教务办，<strong>保障毕业资格审核准确</strong></div>
+              </div>
+              <div class="tl-tags"><span class="tl-tag">行政事务</span><span class="tl-tag">文档管理</span><span class="tl-tag">论文审核</span><span class="tl-tag">学分核对</span></div>
+            </div>
+          </div>
+          <!-- 毕业生招聘会 -->
+          <div class="tl-item">
+            <div class="tl-dot" style="background:#d97706"></div>
+            <div class="tl-card">
+              <div class="tl-header">
+                <div><div class="tl-title">毕业生招聘会（参与）</div><div class="tl-org">韶关学院</div></div>
+                <div class="tl-date">2024 - 2025</div>
+              </div>
+              <div class="tl-achievements">
+                <div class="tl-ach">独立负责考勤核算与假期数据管理，连续3个月实现数据零差错</div>
+                <div class="tl-ach">协助开展30+场培训，累计服务300+人次，编发培训周报4期</div>
+              </div>
+              <div class="tl-tags"><span class="tl-tag">招聘实践</span><span class="tl-tag">数据管理</span></div>
             </div>
           </div>
         </div>
 
-        <h3 style="font-size:1rem;font-weight:800;color:var(--primary);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border);margin-top:28px">🏢 面试经历</h3>
+        <h3 style="font-size:1rem;font-weight:800;color:var(--accent2);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border);margin-top:28px">🏆 学科竞赛</h3>
         <div class="timeline">
           <div class="tl-item">
             <div class="tl-dot" style="background:var(--accent2)"></div>
             <div class="tl-card">
               <div class="tl-header">
-                <div>
-                  <div class="tl-title">人事专员（候选）</div>
-                  <div class="tl-org">丰明电子</div>
-                </div>
-                <div class="tl-date">面试经历</div>
+                <div><div class="tl-title">核心队员</div><div class="tl-org">全国高校商业精英品牌策划挑战赛</div></div>
+                <div class="tl-date">2024.9 - 2024.11</div>
               </div>
-              <div class="tl-desc">参与人事专员岗位面试，积累制造业HR招聘实战经验。</div>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot" style="background:var(--accent2)"></div>
-            <div class="tl-card">
-              <div class="tl-header">
-                <div>
-                  <div class="tl-title">HR招聘专员（候选）</div>
-                  <div class="tl-org">佛山禅医</div>
-                </div>
-                <div class="tl-date">面试经历</div>
+              <div class="tl-achievements">
+                <div class="tl-ach">围绕品牌开展深度调研，结合企业发展现状完成SWOT分析，挖掘品牌文化与核心优势</div>
+                <div class="tl-ach">基于调研成果编制品牌宣传方案，配套设计宣传活动海报，获<strong>全国总决赛二等奖、国家三等奖</strong>各1项</div>
               </div>
-              <div class="tl-desc">参与医疗机构HR招聘专员岗位面试，了解医疗行业人才招募特色与挑战。</div>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot" style="background:#0891b2"></div>
-            <div class="tl-card">
-              <div class="tl-header">
-                <div>
-                  <div class="tl-title">行政专员 / 教务处文员（候选）</div>
-                  <div class="tl-org">香港科技大学（广州）</div>
-                </div>
-                <div class="tl-date">意向岗位</div>
-              </div>
-              <div class="tl-desc">重点申请岗位，对高校行政管理体系有深度了解与高度热情。</div>
+              <div class="tl-tags"><span class="tl-tag">品牌策划</span><span class="tl-tag">SWOT分析</span><span class="tl-tag">市场调研</span><span class="tl-tag">海报设计</span></div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- RIGHT COLUMN - 学生组织 -->
       <div>
         <h3 style="font-size:1rem;font-weight:800;color:var(--primary);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border)">🏛️ 学生组织经历</h3>
         <div class="timeline">
@@ -445,65 +443,43 @@
             <div class="tl-dot" style="background:#d97706"></div>
             <div class="tl-card">
               <div class="tl-header">
-                <div>
-                  <div class="tl-title">社团会长</div>
-                  <div class="tl-org">韶关学院（学生社团）</div>
-                </div>
-                <div class="tl-date">任期内</div>
+                <div><div class="tl-title">青年志愿者协会会长</div><div class="tl-org">韶关学院</div></div>
+                <div class="tl-date">2023 - 2024</div>
               </div>
               <div class="tl-achievements">
-                <div class="tl-ach">全面统筹社团运营与活动策划，协调多部门高效执行</div>
-                <div class="tl-ach">招新活动总策划，推动简历投递量创社团历史新高</div>
-                <div class="tl-ach">建立标准化招新流程，提升组织管理专业化水平</div>
+                <div class="tl-ach"><strong>主导协会年度招新</strong>，制定招募计划、设计面试题库，筛选录用<strong>70+名新成员</strong></div>
+                <div class="tl-ach">组织策划4场公益活动，协调校内外多方资源，跟进活动进度并及时调整方案</div>
+                <div class="tl-ach"><strong>带领协会获评校级"优秀社团"</strong></div>
               </div>
-              <div class="tl-tags">
-                <span class="tl-tag">团队管理</span>
-                <span class="tl-tag">活动策划</span>
-                <span class="tl-tag">招新负责人</span>
-              </div>
+              <div class="tl-tags"><span class="tl-tag">团队管理</span><span class="tl-tag">招新策划</span><span class="tl-tag">活动组织</span><span class="tl-tag">跨部门协调</span></div>
             </div>
           </div>
           <div class="tl-item">
             <div class="tl-dot" style="background:#d97706"></div>
             <div class="tl-card">
               <div class="tl-header">
-                <div>
-                  <div class="tl-title">宣传部副部长</div>
-                  <div class="tl-org">韶关学院（学生组织）</div>
-                </div>
-                <div class="tl-date">任期内</div>
+                <div><div class="tl-title">班级团支书</div><div class="tl-org">韶关学院</div></div>
+                <div class="tl-date">2022 - 2026</div>
               </div>
               <div class="tl-achievements">
-                <div class="tl-ach">主导宣传策略制定，统筹推文、海报、小红书等多渠道内容</div>
-                <div class="tl-ach">管理宣传团队，培养成员设计与文案能力</div>
-                <div class="tl-ach">单篇推文阅读量突破2万，打造校园爆款内容</div>
+                <div class="tl-ach">高效传达各类政策通知与活动安排，及时收集学生反馈并协调解决问题</div>
+                <div class="tl-ach">策划并执行20+次主题班会及团日活动，出勤率均达<strong>95%以上</strong></div>
+                <div class="tl-ach">负责收集、核对并动态更新<strong>30+名同学</strong>的信息档案</div>
               </div>
-              <div class="tl-tags">
-                <span class="tl-tag">内容运营</span>
-                <span class="tl-tag">团队管理</span>
-                <span class="tl-tag">品牌宣传</span>
-              </div>
+              <div class="tl-tags"><span class="tl-tag">学生管理</span><span class="tl-tag">信息核对</span><span class="tl-tag">活动组织</span><span class="tl-tag">上传下达</span></div>
             </div>
           </div>
-          <div class="tl-item">
-            <div class="tl-dot" style="background:#d97706"></div>
-            <div class="tl-card">
-              <div class="tl-header">
-                <div>
-                  <div class="tl-title">团支书</div>
-                  <div class="tl-org">韶关学院（班级组织）</div>
-                </div>
-                <div class="tl-date">任期内</div>
-              </div>
-              <div class="tl-achievements">
-                <div class="tl-ach">组织班级团建活动，维系良好班级氛围</div>
-                <div class="tl-ach">协助辅导员处理学生事务，具备学生管理与服务意识</div>
-              </div>
-              <div class="tl-tags">
-                <span class="tl-tag">学生管理</span>
-                <span class="tl-tag">组织协调</span>
-              </div>
-            </div>
+        </div>
+
+        <div style="margin-top:24px;padding:24px;background:linear-gradient(135deg,#fef3c7,#fde68a22);border-radius:var(--radius);border:1px solid #fde68a">
+          <h4 style="font-size:.95rem;font-weight:800;color:#92400e;margin-bottom:12px">📝 自我评价</h4>
+          <div style="font-size:.85rem;color:var(--text2);line-height:1.8">
+            <p>✓ 拥有扎实的人力资源管理专业知识储备</p>
+            <p>✓ 具有良好的沟通和团队协作能力</p>
+            <p>✓ 具有较强的适应能力和学习能力</p>
+            <p>✓ 热情乐观、善于倾听</p>
+            <p>✓ 责任心强、细心耐心</p>
+            <p>✓ 掌握推文撰写、海报设计技能</p>
           </div>
         </div>
       </div>
@@ -518,32 +494,43 @@
     <div class="section-line"></div>
     <div class="skills-grid">
       <div class="skill-card">
-        <div class="skill-cat"><span class="skill-cat-icon">🧑‍💼</span> HR 核心能力</div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">招聘与人才吸引</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">考勤与员工关系</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">培训体系搭建</span><span class="skill-pct">72%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="72"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">人力资源管理理论</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div></div>
+        <div class="skill-cat"><span class="skill-cat-icon">📚</span> 核心课程（按成绩）</div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">管理学</span><span class="skill-pct">90分</span></div><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">培训与人力资源开发</span><span class="skill-pct">89分</span></div><div class="skill-bar"><div class="skill-fill" data-pct="89"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">人力资源战略与规划</span><span class="skill-pct">87分</span></div><div class="skill-bar"><div class="skill-fill" data-pct="87"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">劳动法与劳动关系</span><span class="skill-pct">87分</span></div><div class="skill-bar"><div class="skill-fill" data-pct="87"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">组织行为学</span><span class="skill-pct">87分</span></div><div class="skill-bar"><div class="skill-fill" data-pct="87"></div></div></div>
       </div>
       <div class="skill-card">
-        <div class="skill-cat"><span class="skill-cat-icon">🏢</span> 行政与组织管理</div>
+        <div class="skill-cat"><span class="skill-cat-icon">🎯</span> 核心课程（按成绩）</div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">招聘与人才测评</span><span class="skill-pct">85分</span></div><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">绩效管理</span><span class="skill-pct">85分</span></div><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">人力资源管理</span><span class="skill-pct">83分</span></div><div class="skill-bar"><div class="skill-fill" data-pct="83"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">薪酬与福利</span><span class="skill-pct">80分</span></div><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat"><span class="skill-cat-icon">📜</span> 证书与资质</div>
+        <div style="font-size:.88rem;color:var(--text2);line-height:2">
+          <p>✅ CET-4（全国大学英语四级）</p>
+          <p>✅ 普通话水平：<strong>二级甲等</strong></p>
+          <p>✅ C1 机动车驾驶证</p>
+          <p>✅ 0门挂科 · 所有学分已修完 · 可按时毕业</p>
+        </div>
+        <div class="skill-cat" style="margin-top:20px"><span class="skill-cat-icon">🖥️</span> 工具能力</div>
+        <div style="font-size:.88rem;color:var(--text2);line-height:2">
+          <p>✅ Office 办公套件（Word/Excel/PPT）</p>
+          <p>✅ 推文撰写与排版</p>
+          <p>✅ 海报设计与视觉呈现</p>
+          <p>✅ 数据分析（SPSS）</p>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat"><span class="skill-cat-icon">💪</span> 综合能力</div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">多任务并行管理</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div></div>
         <div class="skill-item"><div class="skill-header"><span class="skill-name">活动策划与执行</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">团队协调与领导力</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">流程制度制定</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="78"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">文件与档案管理</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div></div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-cat"><span class="skill-cat-icon">✍️</span> 内容与传播</div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">PPT/演示文稿制作</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="92"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">文案策划与推文写作</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">小红书运营</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">海报设计（视觉排版）</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div></div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-cat"><span class="skill-cat-icon">🔬</span> 学术与研究</div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">学术论文写作（量化研究）</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">问卷设计与数据分析</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">AI素养与数字化工具</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">英语（CET-4）</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="65"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">团队管理与招新</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">行政事务与公文处理</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">数据核对与文档审核</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div></div>
       </div>
     </div>
   </div>
@@ -554,55 +541,39 @@
   <div class="section-inner">
     <h2 class="section-title">荣誉与获奖</h2>
     <div class="section-line"></div>
-    <div class="awards-grid">
-      <div class="award-card">
-        <div class="award-icon gold">🏆</div>
-        <div class="award-body">
-          <h4>招新工作最佳成果奖</h4>
-          <p>主导社团招新活动，简历投递量创社团历史新高，策略性运用多渠道宣传精准触达目标群体</p>
-          <div class="award-date">学生社团</div>
-        </div>
-      </div>
-      <div class="award-card">
-        <div class="award-icon blue">📊</div>
-        <div class="award-body">
-          <h4>毕业论文答辩通过</h4>
-          <p>研究方向：AI素养对知识型员工创新行为的影响——组织学习能力的中介作用</p>
-          <div class="award-date">2026届 · 韶关学院</div>
-        </div>
-      </div>
-      <div class="award-card">
-        <div class="award-icon purple">✍️</div>
-        <div class="award-body">
-          <h4>爆款内容创作者</h4>
-          <p>小红书单篇图文浏览量突破2万次，账号获赞1403+，在早睡赛道建立稳定粉丝群体</p>
-          <div class="award-date">小红书平台 · 133+ 粉丝</div>
-        </div>
-      </div>
-      <div class="award-card">
-        <div class="award-icon green">🌿</div>
-        <div class="award-body">
-          <h4>操作规范制定贡献</h4>
-          <p>独立制作《排班与考勤操作指南》PPT，成为组织内部人事管理的标准化参考文档</p>
-          <div class="award-date">盈宇社工服务中心 · 实习期间</div>
-        </div>
-      </div>
-      <div class="award-card">
-        <div class="award-icon gold">🎓</div>
-        <div class="award-body">
-          <h4>三职一肩，综合管理实践</h4>
-          <p>同时担任宣传部副部长、团支书及社团会长，展现超强多任务处理与领导协调能力</p>
-          <div class="award-date">韶关学院在读期间</div>
-        </div>
-      </div>
-      <div class="award-card">
-        <div class="award-icon blue">💡</div>
-        <div class="award-body">
-          <h4>主题班会 PPT 制作者</h4>
-          <p>制作2026年5月主题班会PPT（防灾、食品安全、反诈），兼顾内容深度与视觉美感</p>
-          <div class="award-date">2026年5月 · 班级活动</div>
-        </div>
-      </div>
+    <p class="section-subtitle">在校期间共收录获奖荣誉 4大类、17+项，涵盖专业竞赛、英语赛事、文体活动及个人荣誉称号。</p>
+    <div class="awards-tabs" id="awardsTabs">
+      <button class="awards-tab active" data-cat="all">全部</button>
+      <button class="awards-tab" data-cat="professional">🏆 专业学科竞赛（5项）</button>
+      <button class="awards-tab" data-cat="english">🌍 英语能力竞赛（5项）</button>
+      <button class="awards-tab" data-cat="campus">🎭 校园文体活动（3项）</button>
+      <button class="awards-tab" data-cat="honor">⭐ 个人荣誉称号（7项）</button>
+    </div>
+    <div class="awards-grid" id="awardsGrid">
+      <!-- 专业学科竞赛 -->
+      <div class="award-card" data-cat="professional"><div class="award-icon gold">🥇</div><div class="award-body"><h4>优秀调研报告</h4><p>2023年大学生志愿者暑期社会实践活动</p><div class="award-date">专业竞赛</div></div></div>
+      <div class="award-card" data-cat="professional"><div class="award-icon blue">🥈</div><div class="award-body"><h4>市场调查与分析大赛省级二等奖</h4><p>第14届全国大学生市场调查与分析大赛</p><div class="award-date">省级 · 专业竞赛</div></div></div>
+      <div class="award-card" data-cat="professional"><div class="award-icon blue">🥈</div><div class="award-body"><h4>人力资源管理综合能力大赛校级二等奖</h4><p>第九届全国大学生人力资源管理综合能力大赛</p><div class="award-date">校级 · 专业竞赛</div></div></div>
+      <div class="award-card" data-cat="professional"><div class="award-icon gold">🥈</div><div class="award-body"><h4>流通业经营模拟赛道全国总决赛二等奖</h4><p>2024年全国高校商业精英挑战赛"精创教育杯"</p><div class="award-date">国家级 · 专业竞赛</div></div></div>
+      <div class="award-card" data-cat="professional"><div class="award-icon purple">🥉</div><div class="award-body"><h4>品牌策划竞赛全国三等奖</h4><p>2025年全国高校商业精英挑战赛品牌策划竞赛中国地区选拔赛</p><div class="award-date">国家级 · 专业竞赛</div></div></div>
+      <!-- 英语竞赛 -->
+      <div class="award-card" data-cat="english"><div class="award-icon gold">🥉</div><div class="award-body"><h4>全国大学生英语单词大赛三等奖</h4><p>全国大学生英语单词大赛</p><div class="award-date">英语竞赛</div></div></div>
+      <div class="award-card" data-cat="english"><div class="award-icon blue">🥇</div><div class="award-body"><h4>英语合唱比赛一等奖</h4><p>第十七届英语合唱比赛（全院第1名）</p><div class="award-date">英语竞赛</div></div></div>
+      <div class="award-card" data-cat="english"><div class="award-icon purple">🥈</div><div class="award-body"><h4>英语写作大赛校级二等奖</h4><p>广东省第十一届"联盟杯"本科高校英语写作大赛</p><div class="award-date">省级 · 英语竞赛</div></div></div>
+      <div class="award-card" data-cat="english"><div class="award-icon green">🥈</div><div class="award-body"><h4>英语戏剧大赛校级二等奖</h4><p>第十七届英语戏剧大赛</p><div class="award-date">英语竞赛</div></div></div>
+      <div class="award-card" data-cat="english"><div class="award-icon blue">🥉</div><div class="award-body"><h4>外研社·国才杯外语能力铜奖</h4><p>全国大学生外语能力大赛（外研社·国才杯）</p><div class="award-date">英语竞赛</div></div></div>
+      <div class="award-card" data-cat="english"><div class="award-icon purple">🥈</div><div class="award-body"><h4>外研社·国才杯演讲比赛二等奖</h4><p>2025年"外研社·国才杯"全国大学生外语能力大赛</p><div class="award-date">英语竞赛</div></div></div>
+      <!-- 校园文体 -->
+      <div class="award-card" data-cat="campus"><div class="award-icon purple">🥈</div><div class="award-body"><h4>微团课大赛二等奖</h4><p>第三十四届校园文体艺术季</p><div class="award-date">校园活动</div></div></div>
+      <div class="award-card" data-cat="campus"><div class="award-icon blue">⭐</div><div class="award-body"><h4>班风班貌大赛最佳人气奖</h4><p>班风班貌展示大赛</p><div class="award-date">校园活动</div></div></div>
+      <div class="award-card" data-cat="campus"><div class="award-icon gold">🥇</div><div class="award-body"><h4>羽毛球班级杯第一名</h4><p>第十一届羽毛球班级杯 / 羽毛球全院团体第1名</p><div class="award-date">体育活动</div></div></div>
+      <!-- 个人荣誉 -->
+      <div class="award-card" data-cat="honor"><div class="award-icon gold">🎖️</div><div class="award-body"><h4>优秀社团会长</h4><p>年度优秀社团会长（带领协会获评校级"优秀社团"）</p><div class="award-date">荣誉称号</div></div></div>
+      <div class="award-card" data-cat="honor"><div class="award-icon blue">🎖️</div><div class="award-body"><h4>优秀学生干部</h4><p>年度优秀学生干部 / 优秀共青团干部</p><div class="award-date">荣誉称号</div></div></div>
+      <div class="award-card" data-cat="honor"><div class="award-icon purple">🎖️</div><div class="award-body"><h4>优秀毕业生</h4><p>2026届优秀毕业生</p><div class="award-date">荣誉称号</div></div></div>
+      <div class="award-card" data-cat="honor"><div class="award-icon green">🎖️</div><div class="award-body"><h4>三好学生 / 科研创新先进个人</h4><p>三好学生、科研创新先进个人</p><div class="award-date">荣誉称号</div></div></div>
+      <div class="award-card" data-cat="honor"><div class="award-icon red">🎖️</div><div class="award-body"><h4>文体活动先进个人</h4><p>文体活动先进个人</p><div class="award-date">荣誉称号</div></div></div>
+      <div class="award-card" data-cat="honor"><div class="award-icon gold">🎖️</div><div class="award-body"><h4>社会工作先进个人</h4><p>社会工作先进个人 / 优秀实践团队成员 · i志愿时长102h</p><div class="award-date">荣誉称号</div></div></div>
     </div>
   </div>
 </section>
@@ -614,115 +585,73 @@
     <div class="section-line"></div>
     <div class="ach-grid">
       <div class="ach-card">
-        <div class="ach-num">历史新高</div>
-        <div class="ach-label">招新简历量创纪录</div>
-        <div class="ach-desc">担任社团会长期间，统筹策划招新活动全流程，综合运用线上宣传（小红书/推文）与线下布点策略，吸引的简历投递量为社团有史以来最高，展现出卓越的招聘策划与人才吸引能力。</div>
+        <div class="ach-num">300+</div>
+        <div class="ach-label">毕业生论文格式审核</div>
+        <div class="ach-desc">担任教务助理期间，独立负责全院300+名毕业生论文格式审核，逐篇检查标题、摘要、目录、引用，确保符合学校规范，保障毕业资格审核零差错。</div>
       </div>
       <div class="ach-card">
-        <div class="ach-num">2W+</div>
-        <div class="ach-label">单篇小红书浏览量</div>
-        <div class="ach-desc">运营"早睡赛道+播客"垂直定位的小红书账号，凭借精准选题与高质量内容，单篇图文实现2万+浏览量，积累1403+点赞和133+粉丝，展示出内容策略思维和用户洞察能力。</div>
+        <div class="ach-num">3个月</div>
+        <div class="ach-label">HR实习零差错记录</div>
+        <div class="ach-desc">在盈宇社工服务中心独立负责月度全员考勤核算，连续3个月数据零差错，输出标准化考勤报表6份，并推动核算流程数字化。</div>
       </div>
       <div class="ach-card">
-        <div class="ach-num">3+</div>
-        <div class="ach-label">实习月份 · 制度化产出</div>
-        <div class="ach-desc">在盈宇社工服务中心完成3个月HR实习，不仅完成日常人事事务，还主动输出《排班与考勤操作指南》PPT，将非正式操作流程转化为标准文档，体现制度化思维与主动作为精神。</div>
+        <div class="ach-num">17+</div>
+        <div class="ach-label">获奖荣誉·四大赛道</div>
+        <div class="ach-desc">在校期间累计获17+项荣誉，覆盖专业学科竞赛（省级/国家级）、英语赛事、文体活动及个人荣誉称号四大类别，综合素质全面。</div>
       </div>
       <div class="ach-card">
-        <div class="ach-num">AI×HR</div>
-        <div class="ach-label">毕业论文研究方向</div>
-        <div class="ach-desc">完成《AI素养对知识型员工创新行为的影响》量化研究，顺利通过答辩，研究设计包括变量筛选、效度分析等学术规范操作，体现对HR与数字化转型交叉议题的前瞻性思考。</div>
+        <div class="ach-num">2/31</div>
+        <div class="ach-label">综测前10%·优秀毕业生</div>
+        <div class="ach-desc">综测排名2/31（专业前10%），CPA 3.83/5.0（专业前20%），获评"优秀毕业生""三好学生""科研创新先进个人"等7项荣誉称号。</div>
       </div>
       <div class="ach-card">
-        <div class="ach-num">3职</div>
-        <div class="ach-label">多角色并行管理经验</div>
-        <div class="ach-desc">同时担任宣传部副部长、团支书、社团会长三项学生职务，在不同场景中担任管理者与执行者双重角色，积累了丰富的跨部门协作、时间管理与优先级排序实战经验。</div>
+        <div class="ach-num">70+</div>
+        <div class="ach-label">招新筛选·70+新成员</div>
+        <div class="ach-desc">担任青年志愿者协会会长，主导年度招新，制定招募计划、设计面试题库，筛选录用70+名新成员，带领协会获评校级"优秀社团"。</div>
       </div>
       <div class="ach-card">
-        <div class="ach-num">全栈</div>
-        <div class="ach-label">内容创作全栈能力</div>
-        <div class="ach-desc">独立完成推文撰写、海报设计、PPT制作、小红书运营四类内容形式，具备从选题到发布的全流程内容产出能力，为HR雇主品牌建设、内部刊物和招聘推广提供综合支持。</div>
+        <div class="ach-num">20+</div>
+        <div class="ach-label">主题班会·95%出勤率</div>
+        <div class="ach-desc">担任团支书期间，策划并执行20+次主题班会及团日活动，出勤率均达95%以上，高效传达政策通知，收集并协调解决学生反馈。</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== MATCHER ===== -->
+<!-- ===== JOB MATCHER ===== -->
 <section id="matcher">
   <div class="section-inner">
     <h2 class="section-title">🤖 智能岗位匹配分析</h2>
     <div class="section-line"></div>
     <div class="matcher-card">
       <p class="matcher-desc">
-        将目标岗位的<strong>职位描述（JD）</strong>粘贴到下方，AI 将自动分析我的个人经历与该岗位需求的匹配度，并生成专属应聘优势报告，助力精准求职。
+        将目标岗位的<strong>职位描述（JD）</strong>粘贴到下方，AI 将自动分析我的个人经历与该岗位需求的匹配度，并生成专属应聘优势报告。
       </p>
       <div class="matcher-grid">
         <div>
-          <div class="form-group">
-            <label class="form-label">岗位名称</label>
-            <input class="form-input" id="jobTitle" placeholder="例：行政专员、HR招聘专员..." />
-          </div>
-          <div class="form-group">
-            <label class="form-label">职位描述 / 岗位要求（JD）</label>
-            <textarea class="form-textarea" id="jobDesc" placeholder="请粘贴完整的岗位职责和任职要求，例如：
-
-岗位职责：
-1. 负责招聘渠道维护及简历筛选...
-2. 负责员工入离职手续办理...
-
-任职要求：
-1. 人力资源/管理类专业本科及以上...
-2. 有一年以上相关工作经验..."></textarea>
-          </div>
-          <button class="analyze-btn" id="analyzeBtn" onclick="analyzeMatch()">
-            <span id="btnIcon">🔍</span>
-            <span id="btnText">开始智能分析</span>
-          </button>
+          <div class="form-group"><label class="form-label">岗位名称</label><input class="form-input" id="jobTitle" placeholder="例：行政专员、教务处文员..." /></div>
+          <div class="form-group"><label class="form-label">职位描述 / 岗位要求（JD）</label><textarea class="form-textarea" id="jobDesc" placeholder="请粘贴完整的岗位职责和任职要求..."></textarea></div>
+          <button class="analyze-btn" id="analyzeBtn" onclick="analyzeMatch()"><span id="btnIcon">🔍</span><span id="btnText">开始智能分析</span></button>
         </div>
         <div style="background:var(--bg);border-radius:12px;padding:20px;border:1px solid var(--border)">
           <h4 style="font-size:.9rem;font-weight:800;color:var(--text);margin-bottom:12px">📋 我的核心竞争力标签</h4>
           <div style="display:flex;flex-wrap:wrap;gap:8px">
-            <span class="badge">招聘策划</span>
-            <span class="badge accent">考勤管理</span>
-            <span class="badge purple">员工关系</span>
-            <span class="badge">活动策划</span>
-            <span class="badge accent">内容运营</span>
-            <span class="badge purple">团队管理</span>
-            <span class="badge">PPT制作</span>
-            <span class="badge accent">流程制度</span>
-            <span class="badge purple">AI素养</span>
-            <span class="badge">量化研究</span>
-            <span class="badge accent">小红书运营</span>
-            <span class="badge purple">多职务管理</span>
-            <span class="badge">文案策划</span>
-            <span class="badge accent">组织协调</span>
+            <span class="badge">教务行政</span><span class="badge accent">考勤管理</span><span class="badge purple">论文审核</span>
+            <span class="badge">团队管理</span><span class="badge accent">招新策划</span><span class="badge purple">员工关系</span>
+            <span class="badge">活动组织</span><span class="badge accent">品牌策划</span><span class="badge purple">PPT制作</span>
+            <span class="badge">文宣设计</span><span class="badge accent">中共党员</span><span class="badge purple">CET-4</span>
           </div>
           <div style="margin-top:20px;padding:14px;background:rgba(37,99,235,.05);border-radius:10px;border:1px solid rgba(37,99,235,.1)">
             <div style="font-size:.8rem;font-weight:700;color:var(--primary);margin-bottom:6px">💡 使用提示</div>
             <div style="font-size:.8rem;color:var(--text2);line-height:1.6">
-              粘贴 JD 后，系统将自动匹配：<br>
-              ✓ 岗位职责与我经历的契合度<br>
-              ✓ 任职要求达成情况<br>
-              ✓ 核心竞争力突出点<br>
-              ✓ 可能的能力欠缺提示<br>
-              ✓ 个性化应聘建议摘要
+              粘贴 JD 后，系统将自动匹配：<br>✓ 岗位职责与经历的契合度<br>✓ 任职要求达成情况<br>✓ 核心竞争力突出点<br>✓ 个性化应聘建议摘要
             </div>
           </div>
         </div>
       </div>
-
       <div class="result-area" id="resultArea">
         <div style="height:2px;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:2px;margin-bottom:28px"></div>
-        <div class="match-score-wrap">
-          <div class="score-circle" id="scoreCircle">
-            <span class="score-num" id="scoreNum">-</span>
-          </div>
-          <div class="score-meta">
-            <h3 id="scoreTitle">综合匹配度</h3>
-            <p id="scoreDesc">正在分析...</p>
-            <div class="tag-row" id="scoreTags"></div>
-          </div>
-        </div>
+        <div class="match-score-wrap"><div class="score-circle" id="scoreCircle"><span class="score-num" id="scoreNum">-</span></div><div class="score-meta"><h3 id="scoreTitle">综合匹配度</h3><p id="scoreDesc">正在分析...</p><div class="tag-row" id="scoreTags"></div></div></div>
         <div class="match-sections" id="matchSections"></div>
         <div class="summary-text" id="summaryText"></div>
       </div>
@@ -737,53 +666,28 @@
     <div class="section-line"></div>
     <div class="contact-grid">
       <div class="contact-card">
-        <h3 style="font-size:1.05rem;font-weight:800;margin-bottom:16px;color:var(--text)">📬 联系方式</h3>
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div><div class="contact-label">所在地</div><div class="contact-val">广东省（韶关/广州）</div></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon" style="background:linear-gradient(135deg,#06b6d4,#0891b2)">📱</div>
-          <div><div class="contact-label">微信 / 小红书</div><div class="contact-val">请通过小红书私信联系</div></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon" style="background:linear-gradient(135deg,#ff2442,#ff6584)">🌸</div>
-          <div><div class="contact-label">小红书账号</div><div class="contact-val">早睡赛道 · 133+ 粉丝</div></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon" style="background:linear-gradient(135deg,#8b5cf6,#7c3aed)">🎓</div>
-          <div><div class="contact-label">到岗时间</div><div class="contact-val">最早 2026 年 5 月</div></div>
-        </div>
+        <h3 style="font-size:1.05rem;font-weight:800;margin-bottom:16px;color:var(--text)">📬 基本信息</h3>
+        <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">所在地</div><div class="contact-val">广东佛山 · 籍贯肇庆</div></div></div>
+        <div class="contact-item"><div class="contact-icon" style="background:linear-gradient(135deg,#dc2626,#ef4444)">🔴</div><div><div class="contact-label">政治面貌</div><div class="contact-val">中共党员</div></div></div>
+        <div class="contact-item"><div class="contact-icon" style="background:linear-gradient(135deg,#06b6d4,#0891b2)">🎓</div><div><div class="contact-label">到岗时间</div><div class="contact-val">2026年6月（可提前）</div></div></div>
+        <div class="contact-item"><div class="contact-icon" style="background:linear-gradient(135deg,#8b5cf6,#7c3aed)">📱</div><div><div class="contact-label">联系方式</div><div class="contact-val">请通过邮件/招聘平台联系</div></div></div>
+        <div class="contact-item"><div class="contact-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706)">🎾</div><div><div class="contact-label">爱好</div><div class="contact-val">打羽毛球（全院团体第1名）、唱歌</div></div></div>
       </div>
       <div class="contact-card" style="background:linear-gradient(135deg,#eff6ff,#f5f3ff)">
-        <h3 style="font-size:1.05rem;font-weight:800;margin-bottom:16px;color:var(--primary)">🎯 正在寻找的机会</h3>
+        <h3 style="font-size:1.05rem;font-weight:800;margin-bottom:16px;color:var(--primary)">🎯 求职意向</h3>
         <div style="display:flex;flex-direction:column;gap:12px">
-          <div style="background:#fff;border-radius:10px;padding:14px;border:1px solid var(--border)">
-            <div style="font-weight:700;font-size:.9rem;color:var(--text)">HR 相关岗位</div>
-            <div style="font-size:.82rem;color:var(--text2);margin-top:4px">招聘专员 / 人事专员 / HR助理 · 广东地区优先</div>
-          </div>
-          <div style="background:#fff;border-radius:10px;padding:14px;border:1px solid var(--border)">
-            <div style="font-weight:700;font-size:.9rem;color:var(--text)">行政管理岗位</div>
-            <div style="font-size:.82rem;color:var(--text2);margin-top:4px">行政专员 / 文员 / 教务助理 · 高校/机构优先</div>
-          </div>
-          <div style="background:#fff;border-radius:10px;padding:14px;border:1px solid var(--border)">
-            <div style="font-weight:700;font-size:.9rem;color:var(--text)">内容运营岗位</div>
-            <div style="font-size:.82rem;color:var(--text2);margin-top:4px">新媒体运营 / 内容策划 · 兼具HR视野</div>
-          </div>
-          <div style="background:linear-gradient(135deg,#eff6ff,#e0f2fe);border-radius:10px;padding:14px;border:1px solid #bfdbfe">
-            <div style="font-weight:700;font-size:.88rem;color:var(--primary)">🌟 重点意向</div>
-            <div style="font-size:.82rem;color:var(--text2);margin-top:4px">香港科技大学（广州）行政专员 / 教务处文员</div>
-          </div>
+          <div style="background:#fff;border-radius:10px;padding:14px;border:1px solid var(--border)"><div style="font-weight:700;font-size:.9rem;color:var(--text)">教务处文员 / 行政专员</div><div style="font-size:.82rem;color:var(--text2);margin-top:4px">高校行政岗优先 · 拥有1年+教务助理实战经验</div></div>
+          <div style="background:#fff;border-radius:10px;padding:14px;border:1px solid var(--border)"><div style="font-weight:700;font-size:.9rem;color:var(--text)">HR相关岗位</div><div style="font-size:.82rem;color:var(--text2);margin-top:4px">招聘专员 / 人事专员 / HR助理 · 广东地区优先</div></div>
+          <div style="background:linear-gradient(135deg,#eff6ff,#e0f2fe);border-radius:10px;padding:14px;border:1px solid #bfdbfe"><div style="font-weight:700;font-size:.88rem;color:var(--primary)">🌟 重点意向</div><div style="font-size:.82rem;color:var(--text2);margin-top:4px">香港科技大学（广州） · 教务处文员 / 行政专员</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer>
   <div style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:#fff">黎永恩 · Yongen Li</div>
-  <div>人力资源管理专业 · 2026届 · 韶关学院 | 广东</div>
+  <div>韶关学院 商学院 · 人力资源管理专业 · 2026届 | 中共党员 · 广东佛山</div>
   <div style="margin-top:12px;color:rgba(255,255,255,.4);font-size:.78rem">© 2026 Yongen Li · 个人作品集网站 · 保留所有权利</div>
 </footer>
 
@@ -794,7 +698,6 @@ const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 window.addEventListener('scroll',()=>{
   navbar.classList.toggle('scrolled', window.scrollY > 20);
-  // highlight active nav
   const sections = document.querySelectorAll('section[id]');
   let cur='';
   sections.forEach(s=>{ if(window.scrollY>=s.offsetTop-80) cur=s.id; });
@@ -803,175 +706,113 @@ window.addEventListener('scroll',()=>{
 navToggle.addEventListener('click',()=>navLinks.classList.toggle('open'));
 document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
 
-// ===== SKILL BARS ANIMATION =====
+// ===== SKILL BARS =====
 const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.querySelectorAll('.skill-fill').forEach(bar=>{
-        bar.style.width = bar.dataset.pct + '%';
-      });
-    }
-  });
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.querySelectorAll('.skill-fill').forEach(bar=>{ bar.style.width = bar.dataset.pct + '%'; }); } });
 },{threshold:0.2});
 document.querySelectorAll('.skill-card').forEach(c=>observer.observe(c));
 
-// ===== PERSONAL DATA =====
+// ===== AWARDS TABS =====
+document.querySelectorAll('.awards-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.awards-tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const cat = tab.dataset.cat;
+    document.querySelectorAll('.award-card').forEach(card=>{
+      card.style.display = (cat==='all'||card.dataset.cat===cat) ? '' : 'none';
+    });
+  });
+});
+
+// ===== MATCH DATA (from PDF) =====
 const MY_PROFILE = {
-  name: '黎永恩',
-  major: '人力资源管理',
-  school: '韶关学院',
-  year: '2026届应届生',
-  experiences: [
-    { type:'实习', role:'HR实习生', org:'盈宇社工服务中心', skills:['考勤管理','排班','员工关系','HR流程','PPT制作','制度规范'] },
-    { type:'学生组织', role:'社团会长', org:'韶关学院', skills:['团队管理','活动策划','招聘策划','流程设计','多部门协调','招新策略'] },
-    { type:'学生组织', role:'宣传部副部长', org:'韶关学院', skills:['内容运营','文案策划','团队管理','品牌宣传','推文写作','多渠道传播'] },
-    { type:'学生组织', role:'团支书', org:'韶关学院', skills:['学生管理','组织协调','服务意识','团建活动'] },
-    { type:'学术', role:'毕业论文', topic:'AI素养对知识型员工创新行为的影响', skills:['量化研究','问卷设计','数据分析','学术写作','AI素养','创新管理'] },
-    { type:'内容创作', role:'小红书博主', skills:['小红书运营','内容策划','用户增长','选题策略','粉丝运营','新媒体运营'] }
+  name:'黎永恩', school:'韶关学院 商学院', major:'人力资源管理',
+  experiences:[
+    {type:'实习',role:'HR实习生',org:'盈宇社会工作服务中心',date:'2026.1-2026.4',skills:['考勤管理','排班','员工关系','HR流程','培训组织','数字化']},
+    {type:'教务',role:'教务助理',org:'韶关学院商学院',date:'2023.9-2024.10',skills:['行政事务','文档管理','论文审核','学分核对','公文处理','流程规范']},
+    {type:'学生组织',role:'青年志愿者协会会长',org:'韶关学院',skills:['团队管理','招新策划','活动组织','跨部门协调','面试设计']},
+    {type:'学生组织',role:'班级团支书',org:'韶关学院',skills:['学生管理','信息核对','活动组织','上传下达','档案管理']},
+    {type:'竞赛',role:'品牌策划挑战赛',topic:'全国高校商业精英品牌策划挑战赛',skills:['品牌策划','SWOT分析','市场调研','海报设计','团队协作']},
   ],
-  coreSkills: ['人力资源管理','招聘策划','考勤管理','员工关系','活动策划','团队管理','内容运营','PPT制作','文案策划','流程制度','组织协调','数据分析','AI素养','新媒体运营','学生管理','问卷设计'],
-  personality: ['责任心强','主动作为','多任务处理','沟通能力强','执行力佳','学习能力强'],
-  achievements: ['招新简历量创历史新高','小红书单篇2W+浏览量','独立制作考勤操作指南','完成AI素养量化研究论文答辩','三职一身管理经验']
+  coreSkills:['人力资源管理','教务行政','考勤管理','员工关系','活动策划','团队管理','招新策划','PPT制作','文档审核','流程规范','组织协调','数据分析','品牌策划','学生管理','信息核对'],
+  achievements:['300+毕业生论文审核零差错','HR实习连续3月考勤零差错','17+项获奖荣誉','综测排名2/31','筛选录用70+新成员','20+次主题班会']
 };
 
-// ===== MATCH KEYWORDS =====
 const SKILL_MAP = {
-  '招聘':['招聘策划','招聘','简历筛选','人才吸引','招聘渠道','招新','面试','职位发布','JD','offer','人才'],
-  '考勤':['考勤','排班','打卡','出勤','工时','考勤系统','考勤数据','假期'],
+  '招聘':['招聘','招新','简历筛选','人才吸引','招聘渠道','面试','录用','offer','人才'],
+  '考勤':['考勤','排班','打卡','出勤','工时','考勤系统','假期'],
   '员工关系':['员工关系','员工活动','入职','离职','劳动合同','劳动关系','人事手续','档案','花名册'],
-  '培训':['培训','学习','发展','课程','内训','讲师','培训计划'],
+  '培训':['培训','学习','发展','课程','内训','讲师'],
   '薪酬':['薪酬','工资','绩效','福利','薪资','奖金','核算','五险一金','社保'],
-  '行政':['行政','文员','档案管理','会议','办公','文件','接待','后勤','OA'],
-  '活动策划':['活动策划','策划','组织','执行','活动','方案','策划案'],
-  '内容运营':['内容运营','新媒体','运营','推文','公众号','小红书','文案','传播','内容策划'],
-  '团队管理':['团队','管理','领导','带队','协调','统筹','协作','team'],
-  'PPT':['PPT','演示','汇报','幻灯片','PowerPoint','演讲稿'],
+  '行政':['行政','文员','档案管理','会议','办公','文件','接待','后勤','OA','公文','审核'],
+  '教务':['教务','教学','论文','学分','培养方案','毕业生','学籍','成绩','课程','学生事务','学位','毕业'],
+  '活动策划':['活动策划','策划','组织','执行','方案','策划案'],
+  '内容运营':['内容运营','新媒体','运营','推文','公众号','文案','传播','宣传','海报','设计','排版'],
+  '团队管理':['团队','管理','领导','带队','协调','统筹','协作','沟通'],
+  'PPT':['PPT','演示','汇报','幻灯片','PowerPoint'],
   '数据分析':['数据分析','Excel','报表','统计','SPSS','数据'],
-  'AI':['AI','人工智能','数字化','智能','系统','HRIS','信息化'],
-  '文案写作':['文案','写作','撰写','编辑','报告','通知','公告'],
-  '组织协调':['组织','协调','沟通','跨部门','配合','衔接'],
+  'AI':['AI','人工智能','数字化','智能','系统','信息化'],
+  '公文写作':['公文','写作','撰写','编辑','报告','通知','公告','文档'],
 };
-
-function tokenize(text) {
-  return text.toLowerCase().replace(/[，。！？、：；""''（）【】\n\r]/g,' ').split(/\s+/).filter(t=>t.length>0);
-}
 
 function analyzeMatch() {
   const title = document.getElementById('jobTitle').value.trim();
   const jd = document.getElementById('jobDesc').value.trim();
   if(!jd){ alert('请先粘贴岗位描述(JD)再进行分析！'); return; }
-
   const btn = document.getElementById('analyzeBtn');
   btn.disabled = true;
   document.getElementById('btnIcon').textContent = '⏳';
   document.getElementById('btnText').textContent = '分析中...';
-
   setTimeout(()=>{
     const result = doAnalysis(title||'目标岗位', jd);
     renderResult(result);
     btn.disabled = false;
     document.getElementById('btnIcon').textContent = '✅';
     document.getElementById('btnText').textContent = '重新分析';
-  }, 1200);
+  }, 1000);
 }
 
 function doAnalysis(title, jd) {
   const jdLower = jd.toLowerCase();
-  const matched = [];
-  const partial = [];
-  const gaps = [];
-  let totalWeight = 0;
-  let matchedWeight = 0;
-
-  // Check each skill category
+  const matched = [], partial = [], gaps = [];
+  let totalWeight = 0, matchedWeight = 0;
   for(const [cat, keywords] of Object.entries(SKILL_MAP)){
     const inJD = keywords.some(k=>jdLower.includes(k));
     if(!inJD) continue;
     totalWeight++;
-    const inMySkills = MY_PROFILE.coreSkills.some(s=>keywords.some(k=>s.includes(k)||k.includes(s)));
+    const inMy = MY_PROFILE.coreSkills.some(s=>keywords.some(k=>s.includes(k)||k.includes(s)));
     const inExp = MY_PROFILE.experiences.some(e=>e.skills&&e.skills.some(s=>keywords.some(k=>s.includes(k)||k.includes(s))));
-    if(inMySkills && inExp){ matched.push(cat); matchedWeight+=1; }
-    else if(inMySkills||inExp){ partial.push(cat); matchedWeight+=0.6; }
+    if(inMy&&inExp){ matched.push(cat); matchedWeight+=1; }
+    else if(inMy||inExp){ partial.push(cat); matchedWeight+=0.6; }
     else { gaps.push(cat); }
   }
+  if(/本科|学历|人力资源|管理类|大学|高校/.test(jdLower)){ matched.push('专业学历匹配'); matchedWeight+=1; totalWeight+=1; }
+  if(/党员|中共党员|政治/.test(jdLower)){ matched.push('中共党员身份'); matchedWeight+=1; totalWeight+=1; }
+  if(/应届|校招|毕业生|实习/.test(jdLower)){ matched.push('应届生匹配'); matchedWeight+=0.5; totalWeight+=0.5; }
+  const score = Math.min(Math.max(Math.round(totalWeight>0?(matchedWeight/totalWeight)*100:75),45),96);
 
-  // Check education
-  const needsDegree = /本科|学历|人力资源|管理类|大学|高校/.test(jdLower);
-  if(needsDegree){ matched.push('专业学历匹配'); matchedWeight+=1; totalWeight+=1; }
-
-  // Check personality traits
-  const needsInit = /主动|积极|责任|细心|自驱|执行力/.test(jdLower);
-  if(needsInit){ matched.push('主动性/责任心'); matchedWeight+=1; totalWeight+=1; }
-
-  // Check fresh grad ok
-  const acceptsFresh = /应届|校招|毕业生|实习/.test(jdLower);
-  if(acceptsFresh){ matched.push('应届生友好'); matchedWeight+=0.5; totalWeight+=0.5; }
-
-  const scoreRaw = totalWeight>0 ? Math.round((matchedWeight/totalWeight)*100) : 72;
-  const score = Math.min(Math.max(scoreRaw, 45), 96);
-
-  // Advantage points from experiences
   const advantages = MY_PROFILE.experiences
     .filter(e=>e.skills&&e.skills.some(s=>Object.values(SKILL_MAP).flat().some(k=>jdLower.includes(k)&&(s.includes(k)||k.includes(s)))))
-    .map(e=>{ return `【${e.role}·${e.org}】${e.type==='实习'?'实际参与'+e.skills.slice(0,2).join('、')+'等核心工作':'担任'+e.role+'，积累了'+e.skills.slice(0,2).join('与')+'实战经验'}` });
+    .map(e=>`【${e.role}·${e.org}】${e.date||''}${e.type==='实习'?'参与'+e.skills.slice(0,2).join('、')+'等核心工作':e.type==='教务'?'积累了'+e.skills.slice(0,2).join('与')+'实战经验':'锻炼了'+e.skills.slice(0,2).join('与')+'能力'}`);
 
-  // Build strengths
-  const strengths = [
-    ...matched.slice(0,5).map(m=>`✅ ${m}：JD明确提及，与我的背景高度吻合`),
-    ...advantages.slice(0,3)
-  ];
-
-  // Build improvement tips
+  const strengths = [...matched.slice(0,5).map(m=>`✅ ${m}：JD明确提及，与经历高度吻合`),...advantages.slice(0,3)];
   const improvements = [];
-  if(gaps.length>0) improvements.push(...gaps.slice(0,2).map(g=>`⚠️ ${g}相关经验有待加强，可在面试中强调迁移能力`));
-  const needsCert = /证书|资格证|证明/.test(jdLower);
-  if(needsCert) improvements.push('⚠️ 可补充是否持有相关人力资源证书（如SHRM/二级人力资源管理师等）');
+  if(gaps.length>0) improvements.push(...gaps.slice(0,2).map(g=>`⚠️ ${g}相关经验可补充，面试中可强调迁移能力`));
   const needsExp = /[1-3]年以上|[一二三]年/.test(jdLower);
-  if(needsExp) improvements.push('💡 对工作经验年限要求，可重点强调学生组织及实习经历的实战质量');
-  if(improvements.length===0) improvements.push('💡 整体匹配度优秀，建议在简历和面试中重点突出量化成果（如招新数量创历史新高等）');
-
-  return { score, title, matched, partial, gaps, strengths, improvements,
-    summary: buildSummary(title, score, matched, MY_PROFILE) };
-}
-
-function buildSummary(title, score, matched, profile){
-  const level = score>=80?'高度匹配':score>=65?'较为匹配':'有一定匹配度';
-  const top3 = matched.slice(0,3).join('、') || '组织管理、内容创作、HR基础';
-  return `🎯 综合分析：我的背景与【${title}】岗位呈现<span class="key-highlight">${level}（${score}分）</span>。
-
-核心优势在于：<span class="key-highlight">${top3}</span>等方向与JD需求直接契合，叠加我在韶关学院人力资源管理专业的系统学习，以及在盈宇社工服务中心的3个月实际HR实习经验（含考勤管理、流程制度制作），整体能力结构与岗位需求匹配度较高。
-
-特别亮点：担任社团会长期间主导招新，简历量创历史新高——这是<span class="key-highlight">真实的招聘场景实践</span>，可直接对应HR招聘岗位的核心职责。同时，三职并行的管理经历体现了出色的<span class="key-highlight">多线程任务处理能力</span>，适应快节奏行政/HR工作环境。
-
-建议在投递时：重点量化招新成果（如"较上期提升X%"），并将《排班与考勤操作指南》作为作品集亮点展示，直观证明实际落地能力。`;
+  if(needsExp) improvements.push('💡 对工作经验年限要求，请重点强调教务助理1年+及HR实习的实战质量');
+  if(improvements.length===0) improvements.push('💡 整体匹配度优秀！建议在简历和面试中重点突出量化成果');
+  return {score,title,matched,partial,gaps,strengths,improvements};
 }
 
 function renderResult(r){
-  // Score
   const deg = Math.round((r.score/100)*360);
   document.getElementById('scoreCircle').style.background = `conic-gradient(${r.score>=80?'#2563eb':r.score>=65?'#06b6d4':'#8b5cf6'} ${deg}deg, #f0f4ff ${deg}deg)`;
   document.getElementById('scoreNum').textContent = r.score+'%';
   document.getElementById('scoreTitle').textContent = `「${r.title}」匹配分析`;
   document.getElementById('scoreDesc').textContent = r.score>=80?'高度匹配，重点岗位，建议积极投递！':r.score>=65?'较为匹配，有竞争力，建议充分准备后投递':r.score>=50?'有一定匹配，建议补充相关经历后投递':'匹配度偏低，建议重新评估岗位方向';
-
-  const tags = document.getElementById('scoreTags');
-  tags.innerHTML = r.matched.slice(0,4).map(m=>`<span class="tag tag-blue">${m}</span>`).join('') + r.partial.slice(0,2).map(m=>`<span class="tag tag-cyan">${m}（部分）</span>`).join('');
-
-  // Sections
-  document.getElementById('matchSections').innerHTML = `
-    <div class="match-sec">
-      <h4>✅ 匹配优势（${r.strengths.length}项）</h4>
-      ${r.strengths.map(s=>`<div class="match-item"><span class="mi-icon">•</span>${s}</div>`).join('')}
-    </div>
-    <div class="match-sec">
-      <h4>💡 优化建议（${r.improvements.length}项）</h4>
-      ${r.improvements.map(s=>`<div class="match-item"><span class="mi-icon">•</span>${s}</div>`).join('')}
-      ${r.gaps.length>0?`<div class="match-item" style="margin-top:8px;color:var(--text3)">⚡ 其他JD提及但经历中较少体现：${r.gaps.join('、')}</div>`:''}
-    </div>
-  `;
-
-  document.getElementById('summaryText').innerHTML = r.summary;
-
+  document.getElementById('scoreTags').innerHTML = r.matched.slice(0,4).map(m=>`<span class="tag tag-blue">${m}</span>`).join('') + r.partial.slice(0,2).map(m=>`<span class="tag tag-cyan">${m}（部分）</span>`).join('');
+  document.getElementById('matchSections').innerHTML = `<div class="match-sec"><h4>✅ 匹配优势（${r.strengths.length}项）</h4>${r.strengths.map(s=>`<div class="match-item"><span class="mi-icon">•</span>${s}</div>`).join('')}</div><div class="match-sec"><h4>💡 优化建议（${r.improvements.length}项）</h4>${r.improvements.map(s=>`<div class="match-item"><span class="mi-icon">•</span>${s}</div>`).join('')}${r.gaps.length>0?`<div class="match-item" style="margin-top:8px;color:var(--text3)">⚡ 其他JD提及但经历中较少体现：${r.gaps.join('、')}</div>`:''}</div>`;
+  document.getElementById('summaryText').innerHTML = r.summary|| '';
   const area = document.getElementById('resultArea');
   area.classList.add('show');
   area.scrollIntoView({behavior:'smooth', block:'start'});
