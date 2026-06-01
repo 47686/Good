@@ -5,248 +5,315 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>黎永恩 · 个人主页</title>
 <style>
-  :root {
-    --blue: #1a73e8;
-    --blue-dark: #1557b0;
-    --blue-light: #e8f0fe;
-    --gray-50: #f8fafc;
-    --gray-100: #f1f5f9;
-    --gray-200: #e2e8f0;
-    --gray-300: #cbd5e1;
-    --gray-400: #94a3b8;
-    --gray-500: #64748b;
-    --gray-600: #475569;
-    --gray-700: #334155;
-    --gray-800: #1e293b;
-    --gray-900: #0f172a;
-    --white: #ffffff;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-    --shadow: 0 4px 16px rgba(0,0,0,0.1);
-    --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
-    --radius: 16px;
-    --radius-sm: 10px;
-    --max-w: 1100px;
-  }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #334155; background: #f5f0eb; line-height: 1.7;
+}
 
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-    color: var(--gray-800);
-    background: var(--gray-50);
-    line-height: 1.7;
-  }
+/* ===== 马卡龙色盘 ===== */
+:root {
+  --m-blue:    #d0e5f5;
+  --m-lav:     #e8e0f0;
+  --m-mint:    #d5f0e2;
+  --m-peach:   #fde8e0;
+  --m-cream:   #fdf6f0;
+  --m-rose:    #f8dfe5;
+  --m-sky:     #e0f0fa;
+  --blue-main: #5b9bd5;
+  --text: #3d4a5c;
+}
 
-  /* ===== NAV ===== */
-  nav {
-    position: fixed; top:0; left:0; right:0; z-index:1000;
-    background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--gray-200);
-    padding: 0 24px; height: 60px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  nav .logo { font-weight: 700; font-size: 1.2rem; color: var(--blue); }
-  nav .links { display: flex; gap: 8px; }
-  nav .links a {
-    text-decoration: none; color: var(--gray-600); font-size: 0.9rem;
-    padding: 6px 14px; border-radius: 20px; transition: all 0.2s;
-  }
-  nav .links a:hover { background: var(--blue-light); color: var(--blue); }
+/* ===== NAV ===== */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background: rgba(255,255,255,0.88); backdrop-filter: blur(14px);
+  border-bottom: 1px solid #e8e0d8; padding: 0 24px; height: 60px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+nav .logo { font-weight:700; font-size:1.2rem; color: var(--blue-main); }
+nav .links { display:flex; gap:4px; }
+nav .links a {
+  text-decoration:none; color: #7b8ca0; font-size:0.88rem;
+  padding: 6px 14px; border-radius: 20px; transition: all 0.2s;
+}
+nav .links a:hover { background: var(--m-blue); color: var(--blue-main); }
 
-  /* ===== HERO ===== */
-  .hero {
-    padding: 120px 24px 80px; text-align: center; max-width: var(--max-w); margin: 0 auto;
-  }
-  .hero .badge {
-    display: inline-block; background: #ef4444; color: white;
-    padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
-    margin-bottom: 16px; letter-spacing: 1px;
-  }
-  .hero h1 { font-size: 2.8rem; font-weight: 800; color: var(--gray-900); margin-bottom: 8px; }
-  .hero h1 span { color: var(--blue); }
-  .hero .subtitle { font-size: 1.1rem; color: var(--gray-500); margin-bottom: 28px; }
-  .hero .stats {
-    display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 32px;
-  }
-  .hero .stat { text-align: center; }
-  .hero .stat .num { font-size: 1.8rem; font-weight: 800; color: var(--blue); }
-  .hero .stat .label { font-size: 0.85rem; color: var(--gray-500); }
-  .hero .tags {
-    display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
-  }
-  .hero .tags span {
-    background: var(--blue-light); color: var(--blue); padding: 6px 16px;
-    border-radius: 20px; font-size: 0.85rem; font-weight: 500;
-  }
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(160deg, #c9e4f7 0%, #a0d2f0 40%, #d0e8f8 100%);
+  padding: 130px 24px 90px; text-align: center; position: relative; overflow: hidden;
+}
+.hero::before {
+  content:''; position:absolute; top:-100px; right:-100px;
+  width: 320px; height: 320px; border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+}
+.hero::after {
+  content:''; position:absolute; bottom:-80px; left:-80px;
+  width: 260px; height: 260px; border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+}
+.hero .badge {
+  display:inline-block; background: var(--blue-main); color: white;
+  padding: 5px 18px; border-radius: 20px; font-size:0.82rem; font-weight:600;
+  margin-bottom: 16px; letter-spacing:1px;
+}
+.hero h1 { font-size:3rem; font-weight:800; color: #1a4a7a; position:relative; z-index:1; }
+.hero .subtitle { font-size:1.05rem; color: #6b7d8e; margin-bottom: 32px; position:relative; z-index:1; }
+.hero .stats { display:flex; justify-content:center; gap: 48px; flex-wrap:wrap; margin-bottom:28px; position:relative; z-index:1; }
+.hero .stat { text-align:center; }
+.hero .stat .num { font-size:1.9rem; font-weight:800; color: #3d5a80; }
+.hero .stat .label { font-size:0.82rem; color: #8b9db5; }
+.hero .tags { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; position:relative; z-index:1; }
+.hero .tags span {
+  background: rgba(255,255,255,0.7); border:1px solid rgba(0,0,0,0.06);
+  padding: 6px 16px; border-radius:20px; font-size:0.85rem; color: #5a6d80;
+}
 
-  /* ===== SECTION ===== */
-  section { padding: 80px 24px; }
-  section:nth-child(even) { background: var(--white); }
-  .container { max-width: var(--max-w); margin: 0 auto; }
+/* ===== SECTION 通用 ===== */
+section { padding: 72px 24px; }
+.section-header { text-align:center; margin-bottom: 48px; }
+.section-header .icon { font-size:1.8rem; margin-bottom:4px; }
+.section-header h2 { font-size:1.8rem; font-weight:700; color: #2c3e50; }
+.section-header p { color: #8b9db5; font-size:0.93rem; margin-top:4px; }
+.container { max-width: 1060px; margin:0 auto; }
 
-  .section-header { text-align: center; margin-bottom: 56px; }
-  .section-header .icon { font-size: 2rem; margin-bottom: 8px; }
-  .section-header h2 { font-size: 2rem; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; }
-  .section-header p { color: var(--gray-500); font-size: 1rem; }
+/* ===== ABOUT - 奶油底 ===== */
+#about { background: var(--m-cream); }
+.about-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:18px; }
+.about-card {
+  background: #ffffff; border-radius: 18px; padding: 30px;
+  border:1px solid #f0e8dc; box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.about-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.07); }
+.about-card h3 { font-size:1.05rem; color:#2c3e50; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+.about-card h3 .dot { width:8px; height:8px; border-radius:50%; background: var(--blue-main); }
+.about-card .row { display:flex; gap:12px; margin-bottom:5px; font-size:0.93rem; color:#4a5c6e; flex-wrap:wrap; }
+.about-card .row .key { color:#9aafc4; min-width:65px; }
+.about-card .hl { color: var(--blue-main); font-weight:700; }
+.about-card p { font-size:0.93rem; color:#4a5c6e; line-height:1.8; }
 
-  /* ===== ABOUT CARDS ===== */
-  .about-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;
-  }
-  .about-card {
-    background: var(--white); border-radius: var(--radius); padding: 32px;
-    box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200);
-  }
-  .about-card h3 { font-size: 1.1rem; color: var(--gray-900); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-  .about-card h3 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
-  .about-card .info-row { display: flex; gap: 16px; margin-bottom: 6px; font-size: 0.93rem; color: var(--gray-600); flex-wrap: wrap; }
-  .about-card .info-row .key { color: var(--gray-400); min-width: 70px; }
-  .about-card .highlight-num { color: var(--blue); font-weight: 700; }
+/* ===== EXPERIENCE - 薄荷底 ===== */
+#experience { background: var(--m-mint); }
+.timeline { position:relative; padding-left:44px; max-width:860px; margin:0 auto; }
+.timeline::before {
+  content:''; position:absolute; left:17px; top:0; bottom:0; width:3px;
+  background: linear-gradient(180deg, #7ecba1, #5b9bd5, #b8a9d4);
+  border-radius:2px;
+}
+.tl-item {
+  position:relative; margin-bottom:40px;
+  background:#ffffff; border-radius:18px; padding:28px 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04); border:1px solid #e0f0e6;
+  transition: box-shadow 0.2s;
+}
+.tl-item:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.07); }
+.tl-item::before {
+  content:''; position:absolute; left:-36px; top:32px;
+  width:14px; height:14px; border-radius:50%; background: var(--blue-main);
+  border:3px solid var(--m-mint); box-shadow: 0 0 0 4px rgba(91,155,213,0.12);
+}
+.tl-period {
+  display:inline-block; background: var(--m-blue); color: var(--blue-main);
+  padding:4px 14px; border-radius:14px; font-size:0.82rem; font-weight:600; margin-bottom:10px;
+}
+.tl-title { font-size:1.1rem; font-weight:700; color:#2c3e50; margin-bottom:4px; }
+.tl-sub { font-size:0.9rem; color:#8b9db5; margin-bottom:12px; }
+.tl-item ul { padding-left:20px; color:#4a5c6e; font-size:0.93rem; line-height:1.9; }
+.tl-item ul li { margin-bottom:5px; }
 
-  /* ===== TIMELINE ===== */
-  .timeline { position: relative; padding-left: 40px; }
-  .timeline::before {
-    content: ''; position: absolute; left: 15px; top: 0; bottom: 0;
-    width: 2px; background: var(--gray-200);
-  }
-  .tl-item {
-    position: relative; margin-bottom: 40px;
-    background: var(--white); border-radius: var(--radius); padding: 28px 32px;
-    box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200);
-  }
-  .tl-item::before {
-    content: ''; position: absolute; left: -33px; top: 32px;
-    width: 12px; height: 12px; border-radius: 50%; background: var(--blue);
-    border: 3px solid var(--blue-light);
-  }
-  .tl-item .tl-period {
-    display: inline-block; background: var(--blue-light); color: var(--blue);
-    padding: 3px 12px; border-radius: 12px; font-size: 0.82rem; font-weight: 600;
-    margin-bottom: 10px;
-  }
-  .tl-item .tl-title { font-size: 1.15rem; font-weight: 700; color: var(--gray-900); margin-bottom: 4px; }
-  .tl-item .tl-sub { font-size: 0.93rem; color: var(--gray-500); margin-bottom: 12px; }
-  .tl-item ul { padding-left: 20px; color: var(--gray-600); font-size: 0.93rem; line-height: 1.8; }
-  .tl-item ul li { margin-bottom: 4px; }
+/* ===== SKILLS - 浅蓝底 + 滑动 ===== */
+#skills { background: var(--m-sky); }
+.skills-carousel { position:relative; max-width:960px; margin:0 auto; }
+.skills-track-container { overflow:hidden; border-radius: 18px; }
+.skills-track { display:flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+.skills-slide { min-width:100%; display:grid; grid-template-columns: repeat(2, 1fr); gap:18px; padding: 4px; }
+.skill-cat {
+  background:#ffffff; border-radius:18px; padding:28px;
+  border:1px solid #e0eef8; box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: transform 0.2s;
+}
+.skill-cat:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.07); }
+.skill-cat h4 { font-size:1rem; font-weight:700; color:#2c3e50; margin-bottom:16px; }
+.skill-item { margin-bottom:14px; }
+.skill-label { display:flex; justify-content:space-between; font-size:0.85rem; color:#5a6d80; margin-bottom:6px; }
+.skill-bar { height:8px; background:#e8f0f8; border-radius:4px; overflow:hidden; }
+.skill-bar .fill { height:100%; border-radius:4px; background: linear-gradient(90deg, #7ecba1, #5b9bd5); }
+.skills-dots { display:flex; justify-content:center; gap:8px; margin-top:24px; }
+.skills-dots button {
+  width:10px; height:10px; border-radius:50%; border:none; background:#c4d8e8;
+  cursor:pointer; transition: all 0.3s; padding:0;
+}
+.skills-dots button.active { background: var(--blue-main); width:24px; border-radius:5px; }
+.skills-arrows { position:absolute; top:44%; transform:translateY(-50%); width:100%; display:flex; justify-content:space-between; pointer-events:none; z-index:2; }
+.skills-arrows button {
+  width:36px; height:36px; border-radius:50%; border:1px solid #d0dce8;
+  background: rgba(255,255,255,0.85); color: var(--blue-main); font-size:1rem;
+  cursor:pointer; transition: all 0.2s; pointer-events:auto;
+  display:flex; align-items:center; justify-content:center;
+}
+.skills-arrows button:hover { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.skills-arrows .sprev { margin-left:-18px; }
+.skills-arrows .snext { margin-right:-18px; }
 
-  /* ===== SKILLS GRID ===== */
-  .skill-cats { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
-  .skill-cat {
-    background: var(--white); border-radius: var(--radius); padding: 28px;
-    box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200);
-  }
-  .skill-cat h4 { font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 16px; }
-  .skill-item { margin-bottom: 14px; }
-  .skill-item .skill-label { display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--gray-600); margin-bottom: 5px; }
-  .skill-item .skill-bar {
-    height: 6px; background: var(--gray-100); border-radius: 3px; overflow: hidden;
-  }
-  .skill-item .skill-bar .fill {
-    height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--blue), #4a9af5);
-    transition: width 1.2s ease;
-  }
+/* ===== AWARDS - 薰衣草底 + 滑动轮播 ===== */
+#awards { background: var(--m-lav); }
+.awards-wrapper { max-width:900px; margin:0 auto; position:relative; }
+.av-carousel { overflow:hidden; border-radius:20px; }
+.av-track { display:flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+.av-slide { min-width:100%; display:grid; grid-template-columns: repeat(2, 1fr); gap:18px; padding: 4px; }
+.award-card {
+  background:#ffffff; border-radius:18px; padding:30px;
+  border:1px solid #ece4f2; box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.award-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.07); }
+.award-card .ac-icon { font-size:1.8rem; margin-bottom:10px; }
+.award-card h4 { font-size:1.05rem; font-weight:700; color:#2c3e50; margin-bottom:4px; }
+.award-card .ac-count { font-size:0.82rem; color:#b8a9d4; margin-bottom:12px; }
+.award-card ul { list-style:none; }
+.award-card ul li { font-size:0.9rem; color:#4a5c6e; padding:7px 0; border-bottom:1px solid #f5f0f8; line-height:1.6; }
+.award-card ul li:last-child { border-bottom:none; }
+.av-dots { display:flex; justify-content:center; gap:8px; margin-top:24px; }
+.av-dots button {
+  width:10px; height:10px; border-radius:50%; border:none; background:#d0c8e0;
+  cursor:pointer; transition: all 0.3s; padding:0;
+}
+.av-dots button.active { background: #8b7ec8; width:24px; border-radius:5px; }
+.av-arrows { position:absolute; top:42%; transform:translateY(-50%); width:100%; display:flex; justify-content:space-between; pointer-events:none; z-index:2; }
+.av-arrows button {
+  width:36px; height:36px; border-radius:50%; border:1px solid #d8d0e8;
+  background: rgba(255,255,255,0.85); color: #8b7ec8; font-size:1rem;
+  cursor:pointer; transition: all 0.2s; pointer-events:auto;
+  display:flex; align-items:center; justify-content:center;
+}
+.av-arrows button:hover { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.av-arrows .aprev { margin-left:-18px; }
+.av-arrows .anext { margin-right:-18px; }
 
-  /* ===== AWARDS ===== */
-  .award-cats { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 24px; }
-  .award-cat {
-    background: var(--white); border-radius: var(--radius); padding: 28px 32px;
-    box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200);
-    border-top: 4px solid var(--blue);
-  }
-  .award-cat h4 { font-size: 1.05rem; font-weight: 700; color: var(--gray-900); margin-bottom: 14px; }
-  .award-cat .award-list { display: flex; flex-direction: column; gap: 10px; }
-  .award-cat .award-row {
-    display: flex; align-items: flex-start; gap: 12px;
-    padding: 10px 0; border-bottom: 1px solid var(--gray-100); font-size: 0.92rem; color: var(--gray-700);
-  }
-  .award-cat .award-row:last-child { border-bottom: none; }
-  .award-cat .award-icon {
-    flex-shrink: 0; width: 28px; height: 28px; background: var(--blue-light);
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 0.8rem;
-  }
+/* ===== HIGHLIGHTS - 蜜桃底 + 滑动 ===== */
+#highlights { background: var(--m-peach); }
+.hl-wrapper { position:relative; max-width:960px; margin:0 auto; }
+.hl-carousel { overflow:hidden; border-radius:20px; }
+.hl-track { display:flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+.hl-slide { min-width:100%; display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; padding: 4px; }
+.hl-card {
+  background:#ffffff; border-radius:18px; padding:30px; text-align:center;
+  border:1px solid #fae4da; box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.hl-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.07); }
+.hl-card .hl-icon { font-size:2rem; margin-bottom:10px; }
+.hl-card .hl-num { font-size:1.5rem; font-weight:800; color: var(--blue-main); margin-bottom:4px; }
+.hl-card .hl-title { font-size:0.95rem; font-weight:700; color:#2c3e50; margin-bottom:8px; }
+.hl-card .hl-desc { font-size:0.84rem; color:#7b8ca0; line-height:1.7; }
+.hl-dots { display:flex; justify-content:center; gap:8px; margin-top:24px; }
+.hl-dots button {
+  width:10px; height:10px; border-radius:50%; border:none; background:#f0d4c8;
+  cursor:pointer; transition: all 0.3s; padding:0;
+}
+.hl-dots button.active { background: #e8946e; width:24px; border-radius:5px; }
+.hl-arrows { position:absolute; top:42%; transform:translateY(-50%); width:100%; display:flex; justify-content:space-between; pointer-events:none; z-index:2; }
+.hl-arrows button {
+  width:36px; height:36px; border-radius:50%; border:1px solid #f0d4c8;
+  background: rgba(255,255,255,0.85); color: #e8946e; font-size:1rem;
+  cursor:pointer; transition: all 0.2s; pointer-events:auto;
+  display:flex; align-items:center; justify-content:center;
+}
+.hl-arrows button:hover { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.hl-arrows .hprev { margin-left:-18px; }
+.hl-arrows .hnext { margin-right:-18px; }
 
-  /* ===== HIGHLIGHTS ===== */
-  .hl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-  .hl-card {
-    background: var(--white); border-radius: var(--radius); padding: 32px;
-    box-shadow: var(--shadow); border: 1px solid var(--gray-200);
-    text-align: center; transition: transform 0.2s;
-  }
-  .hl-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-  .hl-card .hl-icon { font-size: 2.2rem; margin-bottom: 12px; }
-  .hl-card .hl-num { font-size: 1.6rem; font-weight: 800; color: var(--blue); margin-bottom: 4px; }
-  .hl-card .hl-title { font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; }
-  .hl-card .hl-desc { font-size: 0.88rem; color: var(--gray-500); line-height: 1.6; }
+/* ===== JOB MATCH - 玫瑰底 ===== */
+#match { background: var(--m-rose); }
+.match-box {
+  max-width:780px; margin:0 auto; background:#ffffff;
+  border-radius:20px; padding:40px; border:1px solid #f2dce2;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+}
+.match-box .match-tags-row {
+  display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;
+}
+.match-box .match-tag {
+  background: #fdf2f5; border:1px solid #f0d0da; color:#c46b8a;
+  padding:8px 18px; border-radius:22px; font-size:0.88rem; cursor:pointer;
+  transition: all 0.2s; font-weight:500;
+}
+.match-box .match-tag:hover { background:#fce4ea; border-color:#e894ae; }
+.match-box .match-tag.active { background:#e894ae; color:white; border-color:#e894ae; }
+.match-box .section-label {
+  display:flex; align-items:center; gap:8px; margin-bottom:8px;
+  font-size:0.85rem; color:#9aafc4; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;
+}
+.match-box .section-label::after {
+  content:''; flex:1; height:1px; background:#f0e0e4;
+}
+.match-box input, .match-box textarea {
+  width:100%; padding:14px 16px; border:1.5px solid #ecdce2; border-radius:12px;
+  font-size:0.93rem; margin-bottom:18px; font-family:inherit;
+  transition: border 0.2s; background: #fdf8f9;
+}
+.match-box textarea:focus, .match-box input:focus {
+  outline:none; border-color: var(--blue-main); box-shadow: 0 0 0 3px rgba(91,155,213,0.1);
+}
+.match-box textarea { min-height:180px; resize:vertical; }
+.match-btn {
+  width:100%; padding:15px;
+  background: linear-gradient(135deg, #5b9bd5, #8b7ec8);
+  color:white; border:none; border-radius:12px; font-size:1rem; font-weight:600;
+  cursor:pointer; transition: all 0.2s; box-shadow: 0 4px 14px rgba(91,155,213,0.3);
+}
+.match-btn:hover { opacity:0.88; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(91,155,213,0.4); }
+.match-result { margin-top:28px; padding:28px; background:#fdf8f9; border-radius:14px; border:1px solid #f2dce2; display:none; }
+.match-result .score { font-size:3rem; font-weight:800; color: var(--blue-main); text-align:center; margin-bottom:8px; }
+.match-result .score-bar {
+  height:8px; background:#f0dce2; border-radius:4px; margin-bottom:24px; overflow:hidden;
+}
+.match-result .score-bar .fill { height:100%; border-radius:4px; background: linear-gradient(90deg, #5b9bd5, #8b7ec8); transition: width 1s ease; }
+.match-result .tag-strip { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; justify-content:center; }
+.match-result .tag-strip span {
+  background: var(--m-blue); color:#3d5a80; padding:5px 14px; border-radius:16px; font-size:0.82rem; font-weight:500;
+}
+.match-result h4 { font-size:1rem; color:#2c3e50; margin:18px 0 10px; }
+.match-result ul { padding-left:20px; color:#4a5c6e; font-size:0.92rem; line-height:1.9; }
+.summary-box { background: var(--m-blue); padding:14px 18px; border-radius:10px; color:#3d5a80; font-size:0.93rem; line-height:1.7; margin-top:8px; }
 
-  /* ===== JOB MATCH ===== */
-  .match-wrapper {
-    max-width: 800px; margin:0 auto;
-    background: var(--white); border-radius: var(--radius); padding: 40px;
-    box-shadow: var(--shadow); border: 1px solid var(--gray-200);
-  }
-  .match-wrapper textarea, .match-wrapper input {
-    width: 100%; padding: 14px 16px; border: 1.5px solid var(--gray-300);
-    border-radius: var(--radius-sm); font-size: 0.93rem; margin-bottom: 16px;
-    font-family: inherit; resize: vertical; transition: border 0.2s;
-  }
-  .match-wrapper textarea:focus, .match-wrapper input:focus {
-    outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-light);
-  }
-  .match-wrapper textarea { min-height: 180px; }
-  .match-btn {
-    width: 100%; padding: 14px; background: var(--blue); color: white;
-    border: none; border-radius: var(--radius-sm); font-size: 1rem; font-weight: 600;
-    cursor: pointer; transition: background 0.2s;
-  }
-  .match-btn:hover { background: var(--blue-dark); }
-  .match-result {
-    margin-top: 28px; padding: 24px; background: var(--gray-50); border-radius: var(--radius-sm);
-    display: none; border: 1px solid var(--gray-200);
-  }
-  .match-result .score {
-    font-size: 3rem; font-weight: 800; color: var(--blue); text-align: center;
-    margin-bottom: 20px;
-  }
-  .match-result .score span { font-size: 1.2rem; color: var(--gray-500); }
-  .match-result h4 { font-size: 1.05rem; color: var(--gray-900); margin: 20px 0 10px; }
-  .match-result ul { padding-left: 20px; color: var(--gray-600); font-size: 0.92rem; line-height: 1.8; }
-  .match-result .summary-box {
-    background: var(--blue-light); padding: 16px 20px; border-radius: 10px;
-    color: var(--gray-700); font-size: 0.93rem; line-height: 1.7; margin-top: 12px;
-  }
+/* ===== CONTACT - 浅蓝底 ===== */
+#contact { background: var(--m-blue); }
+.contact-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap:18px; }
+.contact-card {
+  background:#ffffff; border-radius:18px; padding:30px;
+  border:1px solid #d0dce8; box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: transform 0.2s;
+}
+.contact-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.07); }
+.contact-card h3 { font-size:1.05rem; color:#2c3e50; margin-bottom:18px; }
+.contact-card .row { display:flex; gap:12px; margin-bottom:8px; font-size:0.93rem; color:#4a5c6e; align-items:flex-start; }
+.contact-card .row .key { color:#9aafc4; min-width:72px; }
 
-  /* ===== CONTACT ===== */
-  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-  .contact-card {
-    background: var(--white); border-radius: var(--radius); padding: 32px;
-    box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200);
-  }
-  .contact-card h3 { font-size: 1.1rem; color: var(--gray-900); margin-bottom: 20px; }
-  .contact-card .row { display: flex; gap: 12px; margin-bottom: 10px; font-size: 0.93rem; color: var(--gray-600); align-items: flex-start; }
-  .contact-card .row .key { color: var(--gray-400); min-width: 80px; }
+footer {
+  text-align:center; padding:28px 24px; color:#9aafc4; font-size:0.85rem;
+  background: #f5f0eb; border-top:1px solid #e8e0d8;
+}
 
-  /* ===== FOOTER ===== */
-  footer {
-    text-align: center; padding: 40px 24px; color: var(--gray-400); font-size: 0.85rem;
-    border-top: 1px solid var(--gray-200);
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
-    .hero .stats { gap: 24px; }
-    .award-cats { grid-template-columns: 1fr; }
-    .tl-item { padding: 20px; }
-    .match-wrapper { padding: 24px; }
-    nav { padding: 0 16px; }
-    nav .links a { padding: 4px 10px; font-size: 0.82rem; }
-  }
+/* ===== 响应式 ===== */
+@media (max-width:768px) {
+  .hero h1 { font-size:2.2rem; }
+  .hero .stats { gap:28px; }
+  .skills-slide { grid-template-columns:1fr; }
+  .av-slide { grid-template-columns:1fr; }
+  .hl-slide { grid-template-columns:1fr; }
+  .tl-item { padding:22px; }
+  .match-box { padding:24px; }
+  nav .links a { padding:4px 10px; font-size:0.78rem; }
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">黎永恩</div>
   <div class="links">
@@ -263,16 +330,14 @@
 <!-- HERO -->
 <section class="hero">
   <div class="badge">中共党员</div>
-  <h1>黎<span>永恩</span></h1>
+  <h1>黎永恩</h1>
   <p class="subtitle">韶关学院 · 人力资源管理专业 · 2026届本科应届生</p>
-
   <div class="stats">
     <div class="stat"><div class="num">3.83/5</div><div class="label">GPA</div></div>
     <div class="stat"><div class="num">2/31</div><div class="label">综测排名</div></div>
     <div class="stat"><div class="num">17+</div><div class="label">获奖项数</div></div>
     <div class="stat"><div class="num">3段</div><div class="label">实习/实践</div></div>
   </div>
-
   <div class="tags">
     <span>🗓️ 最早6月到岗</span>
     <span>📍 现居佛山</span>
@@ -281,66 +346,48 @@
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" style="background:var(--white);">
+<!-- ABOUT 奶油底 -->
+<section id="about">
   <div class="container">
-    <div class="section-header">
-      <div class="icon">👤</div>
-      <h2>关于我</h2>
-      <p>人力资源管理专业，致力于从HR执行岗成长为HRBP</p>
-    </div>
-
+    <div class="section-header"><div class="icon">👤</div><h2>关于我</h2><p>人力资源管理专业，致力于从HR执行岗成长为HRBP</p></div>
     <div class="about-grid">
       <div class="about-card">
         <h3><span class="dot"></span>基本信息</h3>
-        <div class="info-row"><span class="key">出生年月</span> 2003年12月</div>
-        <div class="info-row"><span class="key">籍贯</span> 广东肇庆</div>
-        <div class="info-row"><span class="key">现居</span> 广东佛山</div>
-        <div class="info-row"><span class="key">政治面貌</span> 中共党员</div>
-        <div class="info-row"><span class="key">到岗时间</span> 最早2026年5月起</div>
+        <div class="row"><span class="key">出生年月</span> 2003年12月</div>
+        <div class="row"><span class="key">籍贯</span> 广东肇庆</div>
+        <div class="row"><span class="key">现居</span> 广东佛山</div>
+        <div class="row"><span class="key">政治面貌</span> 中共党员</div>
+        <div class="row"><span class="key">到岗时间</span> 最早2026年6月起</div>
       </div>
-
       <div class="about-card">
         <h3><span class="dot"></span>教育背景</h3>
-        <div class="info-row"><span class="key">院校</span> 韶关学院</div>
-        <div class="info-row"><span class="key">专业</span> 人力资源管理（本科）</div>
-        <div class="info-row"><span class="key">届别</span> 2026届</div>
-        <div class="info-row"><span class="key">GPA</span> <span class="highlight-num">3.83 / 5.0</span></div>
-        <div class="info-row"><span class="key">综测排名</span> <span class="highlight-num">2 / 31</span>（Top 6%）</div>
+        <div class="row"><span class="key">院校</span> 韶关学院</div>
+        <div class="row"><span class="key">专业</span> 人力资源管理（本科）</div>
+        <div class="row"><span class="key">届别</span> 2026届</div>
+        <div class="row"><span class="key">GPA</span> <span class="hl">3.83 / 5.0</span></div>
+        <div class="row"><span class="key">综测排名</span> <span class="hl">2 / 31</span>（Top 6%）</div>
       </div>
-
       <div class="about-card">
         <h3><span class="dot"></span>核心课程</h3>
-        <div class="info-row"><span class="key">管理学</span> 90分</div>
-        <div class="info-row"><span class="key">组织行为学</span> 优秀</div>
-        <div class="info-row"><span class="key">人力资源规划</span> 优秀</div>
-        <div class="info-row"><span class="key">培训与开发</span> 优秀</div>
-        <div class="info-row"><span class="key">劳动关系与法律</span> 优秀</div>
+        <div class="skill-item"><div class="skill-label"><span>管理学</span><span>90%</span></div><div class="skill-bar"><div class="fill" style="width:90%"></div></div></div>
+        <div class="skill-item"><div class="skill-label"><span>组织行为学</span><span>88%</span></div><div class="skill-bar"><div class="fill" style="width:88%"></div></div></div>
+        <div class="skill-item"><div class="skill-label"><span>人力资源规划</span><span>85%</span></div><div class="skill-bar"><div class="fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><div class="skill-label"><span>培训与开发</span><span>82%</span></div><div class="skill-bar"><div class="fill" style="width:82%"></div></div></div>
+        <div class="skill-item"><div class="skill-label"><span>劳动关系与法律</span><span>80%</span></div><div class="skill-bar"><div class="fill" style="width:80%"></div></div></div>
       </div>
-
       <div class="about-card">
         <h3><span class="dot"></span>自我评价</h3>
-        <p style="color:var(--gray-600);font-size:0.93rem;line-height:1.8;">
-          热情乐观，具有强烈的责任心和良好的服务意识；工作态度端正，认真负责，
-          具有主动学习意识与团队合作精神；有较好的沟通协调能力与执行力，
-          能高效协助团队完成日常行政及人力资源相关事务。
-        </p>
+        <p>热情乐观，具有强烈的责任心和良好的服务意识；工作态度端正，认真负责，具有主动学习意识与团队合作精神；有较好的沟通协调能力与执行力，能高效协助团队完成日常行政及人力资源相关事务。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
+<!-- EXPERIENCE 薄荷底 -->
 <section id="experience">
   <div class="container">
-    <div class="section-header">
-      <div class="icon">💼</div>
-      <h2>经历时间线</h2>
-      <p>实习 · 校园 · 求职 — 每一步都在靠近目标</p>
-    </div>
-
+    <div class="section-header"><div class="icon">💼</div><h2>经历时间线</h2><p>实习 · 校园 · 求职 — 每一步都在靠近目标</p></div>
     <div class="timeline">
-
       <div class="tl-item">
         <div class="tl-period">2026.1 – 2026.4</div>
         <div class="tl-title">佛山市盈宇社会工作服务中心 · HR实习生</div>
@@ -350,222 +397,182 @@
           <li>参与员工入离职手续办理及档案管理</li>
           <li>独立制作《排班与考勤操作指南》PPT，用于内部培训使用</li>
           <li>协助组织员工活动及日常行政事务协调</li>
-          <li>积累了对非营利组织人力资源管理的实际认知</li>
         </ul>
       </div>
-
       <div class="tl-item">
         <div class="tl-period">2023.9 – 2024.10</div>
         <div class="tl-title">韶关学院商学院 · 教务助理</div>
         <div class="tl-sub">韶关学院校本部</div>
         <ul>
           <li>协助审核 <strong>300+</strong> 名毕业生的毕业论文格式及材料规范性</li>
-          <li>配合学院教务老师完成毕业生资格审核、数据整理与归档工作</li>
+          <li>配合学院教务老师完成毕业生资格审核、数据整理与归档</li>
           <li>参与教务处日常事务：文件收发、通知传达、会议记录</li>
-          <li>锻炼了严谨细致的工作习惯和批量文档处理能力</li>
         </ul>
       </div>
-
       <div class="tl-item">
         <div class="tl-period">2023.10 – 2024.10</div>
         <div class="tl-title">韶关学院 · 青年志愿者协会会长</div>
         <ul>
           <li>统筹管理协会日常运营，组织策划校内外志愿服务活动</li>
-          <li>主导招新工作，录用新成员 <strong>70+</strong> 人，报名参与人数创历届新高</li>
+          <li>主导招新工作，录用新成员 <strong>70+</strong> 人，报名人数创历届新高</li>
           <li>i志愿累计服务时长 <strong>102小时</strong></li>
         </ul>
       </div>
-
       <div class="tl-item">
         <div class="tl-period">2024 – 2025</div>
-        <div class="tl-title">品牌策划挑战赛 & 毕业生招聘会</div>
+        <div class="tl-title">品牌策划挑战赛 & 班级管理</div>
         <ul>
-          <li>参加全国高校商业精英挑战赛品牌策划竞赛，获 <strong>全国总决赛二等奖</strong> 及 <strong>国家三等奖</strong></li>
+          <li>全国高校商业精英挑战赛品牌策划竞赛 — <strong>全国总决赛二等奖</strong> + <strong>国家三等奖</strong></li>
           <li>参与韶关学院毕业生校园招聘会组织工作</li>
           <li>担任班级团支书，统筹班级活动和日常管理</li>
         </ul>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-period">2026年 春招季</div>
-        <div class="tl-title">积极求职 · 多线并进</div>
-        <ul>
-          <li>已面试：佛山禅医HR招聘专员、丰明电子人事专员</li>
-          <li>已投递：香港科技大学（广州）行政专员、教务处文员</li>
-          <li>目标岗位：行政/人事/教务管理类</li>
-        </ul>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" style="background:var(--white);">
+<!-- SKILLS 浅蓝底 + 滑动轮播 -->
+<section id="skills">
   <div class="container">
-    <div class="section-header">
-      <div class="icon">🛠️</div>
-      <h2>专业技能</h2>
-      <p>四年积累，覆盖人力资源管理全流程</p>
-    </div>
-
-    <div class="skill-cats">
-      <div class="skill-cat">
-        <h4>📋 HR核心技能</h4>
-        <div class="skill-item"><div class="skill-label"><span>招聘与面试</span><span>85%</span></div><div class="skill-bar"><div class="fill" style="width:85%"></div></div></div>
-        <div class="skill-item"><div class="skill-label"><span>员工关系</span><span>80%</span></div><div class="skill-bar"><div class="fill" style="width:80%"></div></div></div>
-        <div class="skill-item"><div class="skill-label"><span>培训与开发</span><span>78%</span></div><div class="skill-bar"><div class="fill" style="width:78%"></div></div></div>
-        <div class="skill-item"><div class="skill-label"><span>薪酬与绩效</span><span>72%</span></div><div class="skill-bar"><div class="fill" style="width:72%"></div></div></div>
+    <div class="section-header"><div class="icon">🛠️</div><h2>专业技能</h2><p>四年积累，覆盖人力资源管理全流程 · 左右滑动浏览</p></div>
+    <div class="skills-carousel" id="skillsCarousel">
+      <div class="skills-arrows">
+        <button class="sprev" onclick="moveSkills(-1)">&#8592;</button>
+        <button class="snext" onclick="moveSkills(1)">&#8594;</button>
       </div>
-
-      <div class="skill-cat">
-        <h4>📁 行政管理</h4>
-        <div class="skill-item"><div class="skill-label"><span>文档与档案管理</span><span>90%</span></div><div class="skill-bar"><div class="fill" style="width:90%"></div></div></div>
-        <div class="skill-item"><div class="skill-label"><span>Office办公套件</span><span>88%</span></div><div class="skill-bar"><div class="fill" style="width:88%"></div></div></div>
-        <div class="skill-item"><div class="skill-label"><span>沟通与协调</span><span>85%</span></div><div class="skill-bar"><div class="fill" style="width:85%"></div></div></div>
-        <div class="skill-item"><div class="skill-label"><span>活动组织</span><span>82%</span></div><div class="skill-bar"><div class="fill" style="width:82%"></div></div></div>
+      <div class="skills-track-container">
+        <div class="skills-track" id="skillsTrack">
+          <div class="skills-slide">
+            <div class="skill-cat">
+              <h4>📋 HR核心技能</h4>
+              <div class="skill-item"><div class="skill-label"><span>招聘与面试</span><span>85%</span></div><div class="skill-bar"><div class="fill" style="width:85%"></div></div></div>
+              <div class="skill-item"><div class="skill-label"><span>员工关系</span><span>80%</span></div><div class="skill-bar"><div class="fill" style="width:80%"></div></div></div>
+              <div class="skill-item"><div class="skill-label"><span>培训与开发</span><span>78%</span></div><div class="skill-bar"><div class="fill" style="width:78%"></div></div></div>
+              <div class="skill-item"><div class="skill-label"><span>薪酬与绩效</span><span>72%</span></div><div class="skill-bar"><div class="fill" style="width:72%"></div></div></div>
+            </div>
+            <div class="skill-cat">
+              <h4>📁 行政管理</h4>
+              <div class="skill-item"><div class="skill-label"><span>文档与档案管理</span><span>90%</span></div><div class="skill-bar"><div class="fill" style="width:90%"></div></div></div>
+              <div class="skill-item"><div class="skill-label"><span>Office办公套件</span><span>88%</span></div><div class="skill-bar"><div class="fill" style="width:88%"></div></div></div>
+              <div class="skill-item"><div class="skill-label"><span>沟通与协调</span><span>85%</span></div><div class="skill-bar"><div class="fill" style="width:85%"></div></div></div>
+              <div class="skill-item"><div class="skill-label"><span>活动组织</span><span>82%</span></div><div class="skill-bar"><div class="fill" style="width:82%"></div></div></div>
+            </div>
+          </div>
+          <div class="skills-slide">
+            <div class="skill-cat">
+              <h4>🎨 内容创作</h4>
+              <div class="skill-item"><div class="skill-label"><span>PPT设计与制作</span><span>88%</span></div><div class="skill-bar"><div class="fill" style="width:88%"></div></div></div>
+              <div class="skill-item"><div class="skill-label"><span>新媒体运营</span><span>80%</span></div><div class="skill-bar"><div class="fill" style="width:80%"></div></div></div>
+              <div class="skill-item"><div class="skill-label"><span>推文编辑</span><span>78%</span></div><div class="skill-bar"><div class="fill" style="width:78%"></div></div></div>
+              <div class="skill-item"><div class="skill-label"><span>海报设计</span><span>70%</span></div><div class="skill-bar"><div class="fill" style="width:70%"></div></div></div>
+            </div>
+            <div class="skill-cat">
+              <h4>📊 学术研究</h4>
+              <div class="skill-item"><div class="skill-label"><span>SPSS数据分析</span><span>75%</span></div><div class="skill-bar"><div class="fill" style="width:75%"></div></div></div>
+              <div class="skill-item"><div class="skill-label"><span>文献综述</span><span>82%</span></div><div class="skill-bar"><div class="fill" style="width:82%"></div></div></div>
+              <div class="skill-item"><div class="skill-label"><span>问卷调查设计</span><span>80%</span></div><div class="skill-bar"><div class="fill" style="width:80%"></div></div></div>
+              <div class="skill-item"><div class="skill-label"><span>论文写作</span><span>78%</span></div><div class="skill-bar"><div class="fill" style="width:78%"></div></div></div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="skill-cat">
-        <h4>🎨 内容创作</h4>
-        <div class="skill-item"><div class="skill-label"><span>PPT设计与制作</span><span>88%</span></div><div class="skill-bar"><div class="fill" style="width:88%"></div></div></div>
-        <div class="skill-item"><div class="skill-label"><span>新媒体运营（小红书）</span><span>80%</span></div><div class="skill-bar"><div class="fill" style="width:80%"></div></div></div>
-        <div class="skill-item"><div class="skill-label"><span>推文编辑</span><span>78%</span></div><div class="skill-bar"><div class="fill" style="width:78%"></div></div></div>
-        <div class="skill-item"><div class="skill-label"><span>海报设计</span><span>70%</span></div><div class="skill-bar"><div class="fill" style="width:70%"></div></div></div>
-      </div>
-
-      <div class="skill-cat">
-        <h4>📊 学术研究</h4>
-        <div class="skill-item"><div class="skill-label"><span>SPSS数据分析</span><span>75%</span></div><div class="skill-bar"><div class="fill" style="width:75%"></div></div></div>
-        <div class="skill-item"><div class="skill-label"><span>文献综述</span><span>82%</span></div><div class="skill-bar"><div class="fill" style="width:82%"></div></div></div>
-        <div class="skill-item"><div class="skill-label"><span>问卷调查设计</span><span>80%</span></div><div class="skill-bar"><div class="fill" style="width:80%"></div></div></div>
-        <div class="skill-item"><div class="skill-label"><span>论文写作</span><span>78%</span></div><div class="skill-bar"><div class="fill" style="width:78%"></div></div></div>
+      <div class="skills-dots" id="skillsDots">
+        <button class="active" onclick="goSkills(0)"></button>
+        <button onclick="goSkills(1)"></button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- AWARDS -->
+<!-- AWARDS 薰衣草底 + 轮播 -->
 <section id="awards">
   <div class="container">
-    <div class="section-header">
-      <div class="icon">🏆</div>
-      <h2>获奖情况</h2>
-      <p>共17+项奖项 · 按德智体美劳分类</p>
-    </div>
-
-    <div class="award-cats">
-      <div class="award-cat" style="border-top-color:#2563eb;">
-        <h4>🏅 专业竞赛类（5项）</h4>
-        <div class="award-list">
-          <div class="award-row"><div class="award-icon">🥈</div>品牌策划挑战赛 · 全国总决赛二等奖</div>
-          <div class="award-row"><div class="award-icon">🥉</div>品牌策划挑战赛 · 国家三等奖</div>
-          <div class="award-row"><div class="award-icon">⭐</div>其他专业竞赛奖项 3项</div>
-        </div>
+    <div class="section-header"><div class="icon">🏆</div><h2>获奖情况</h2><p>共17+项奖项 · 左右滑动浏览</p></div>
+    <div class="awards-wrapper" id="awardsWrapper">
+      <div class="av-arrows">
+        <button class="aprev" onclick="moveAwards(-1)">&#8592;</button>
+        <button class="anext" onclick="moveAwards(1)">&#8594;</button>
       </div>
-
-      <div class="award-cat" style="border-top-color:#0891b2;">
-        <h4>📖 英语竞赛类（5项）</h4>
-        <div class="award-list">
-          <div class="award-row"><div class="award-icon">🔤</div>英语类竞赛及活动奖项 × 5项</div>
+      <div class="av-carousel"><div class="av-track" id="avTrack">
+        <div class="av-slide">
+          <div class="award-card">
+            <div class="ac-icon">🏅</div><h4>专业竞赛</h4><div class="ac-count">5 项</div>
+            <ul><li>品牌策划挑战赛 · 全国总决赛二等奖</li><li>品牌策划挑战赛 · 国家三等奖</li><li>其他专业竞赛奖项 3项</li></ul>
+          </div>
+          <div class="award-card">
+            <div class="ac-icon">🔤</div><h4>英语竞赛</h4><div class="ac-count">5 项</div>
+            <ul><li>英语类竞赛及活动奖项 × 5项</li></ul>
+          </div>
         </div>
-      </div>
-
-      <div class="award-cat" style="border-top-color:#7c3aed;">
-        <h4>🎯 文体活动类（3项）</h4>
-        <div class="award-list">
-          <div class="award-row"><div class="award-icon">🏸</div>羽毛球全院团体第1名</div>
-          <div class="award-row"><div class="award-icon">🎯</div>其他文体奖项 2项</div>
+        <div class="av-slide">
+          <div class="award-card">
+            <div class="ac-icon">🏸</div><h4>文体活动</h4><div class="ac-count">3 项</div>
+            <ul><li>羽毛球全院团体第1名</li><li>其他文体奖项 2项</li></ul>
+          </div>
+          <div class="award-card">
+            <div class="ac-icon">⭐</div><h4>荣誉表彰</h4><div class="ac-count">7 项</div>
+            <ul><li>中共党员</li><li>优秀学生干部 / 优秀团干</li><li>其他校级及以上荣誉 5项</li></ul>
+          </div>
         </div>
-      </div>
-
-      <div class="award-cat" style="border-top-color:#dc2626;">
-        <h4>🌟 荣誉表彰类（7项）</h4>
-        <div class="award-list">
-          <div class="award-row"><div class="award-icon">🏅</div>中共党员</div>
-          <div class="award-row"><div class="award-icon">⭐</div>优秀学生干部 / 优秀团干</div>
-          <div class="award-row"><div class="award-icon">💎</div>其他校级及以上荣誉 5项</div>
-        </div>
+      </div></div>
+      <div class="av-dots" id="avDots">
+        <button class="active" onclick="goAwards(0)"></button>
+        <button onclick="goAwards(1)"></button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HIGHLIGHTS -->
-<section id="highlights" style="background:var(--white);">
+<!-- HIGHLIGHTS 蜜桃底 + 滑动轮播 -->
+<section id="highlights">
   <div class="container">
-    <div class="section-header">
-      <div class="icon">⭐</div>
-      <h2>个人亮点</h2>
-      <p>用数据说话，每一个成果都经得起检验</p>
-    </div>
-
-    <div class="hl-grid">
-      <div class="hl-card">
-        <div class="hl-icon">📈</div>
-        <div class="hl-num">70+人</div>
-        <div class="hl-title">招新人数创历史新高</div>
-        <div class="hl-desc">作为青年志愿者协会会长主导招新，报名参与人数创历届新高，最终录用70+人</div>
+    <div class="section-header"><div class="icon">⭐</div><h2>个人亮点</h2><p>用数据说话 · 左右滑动浏览</p></div>
+    <div class="hl-wrapper" id="hlWrapper">
+      <div class="hl-arrows">
+        <button class="hprev" onclick="moveHL(-1)">&#8592;</button>
+        <button class="hnext" onclick="moveHL(1)">&#8594;</button>
       </div>
-
-      <div class="hl-card">
-        <div class="hl-icon">📄</div>
-        <div class="hl-num">300+份</div>
-        <div class="hl-title">毕业论文审核经验</div>
-        <div class="hl-desc">教务助理任期内协助审核300+名毕业生的论文材料，零差错通过学院复核</div>
-      </div>
-
-      <div class="hl-card">
-        <div class="hl-icon">📊</div>
-        <div class="hl-num">3.83/5</div>
-        <div class="hl-title">学业成绩优异</div>
-        <div class="hl-desc">GPA 3.83，综测排名 2/31（Top 6%），0门挂科，全部学分修完</div>
-      </div>
-
-      <div class="hl-card">
-        <div class="hl-icon">🎓</div>
-        <div class="hl-num">AI × HR</div>
-        <div class="hl-title">毕业论文前沿方向</div>
-        <div class="hl-desc">「AI素养对知识型员工创新行为的影响」— 将AI前沿趋势与人力资源管理相结合</div>
-      </div>
-
-      <div class="hl-card">
-        <div class="hl-icon">🏆</div>
-        <div class="hl-num">全国二等奖</div>
-        <div class="hl-title">品牌策划竞赛</div>
-        <div class="hl-desc">全国高校商业精英挑战赛品牌策划竞赛，获全国总决赛二等奖及国家三等奖</div>
-      </div>
-
-      <div class="hl-card">
-        <div class="hl-icon">🛠️</div>
-        <div class="hl-num">102h</div>
-        <div class="hl-title">志愿服务时长</div>
-        <div class="hl-desc">i志愿累计服务102小时，组织多项校内外志愿服务活动</div>
+      <div class="hl-carousel"><div class="hl-track" id="hlTrack">
+        <div class="hl-slide">
+          <div class="hl-card"><div class="hl-icon">📈</div><div class="hl-num">70+人</div><div class="hl-title">招新人数创历史新高</div><div class="hl-desc">青协会长主导招新，报名参与人数创历届新高，录用70+人</div></div>
+          <div class="hl-card"><div class="hl-icon">📄</div><div class="hl-num">300+份</div><div class="hl-title">毕业论文审核经验</div><div class="hl-desc">教务助理任期内审核300+份论文材料，零差错通过复核</div></div>
+          <div class="hl-card"><div class="hl-icon">📊</div><div class="hl-num">3.83/5</div><div class="hl-title">学业成绩优异</div><div class="hl-desc">GPA 3.83，综测2/31（Top6%），0挂科</div></div>
+        </div>
+        <div class="hl-slide">
+          <div class="hl-card"><div class="hl-icon">🎓</div><div class="hl-num">AI × HR</div><div class="hl-title">毕业论文前沿方向</div><div class="hl-desc">「AI素养对知识型员工创新行为的影响」</div></div>
+          <div class="hl-card"><div class="hl-icon">🏆</div><div class="hl-num">全国二等奖</div><div class="hl-title">品牌策划竞赛</div><div class="hl-desc">全国高校商业精英挑战赛，全国总决赛二等奖+国家三等奖</div></div>
+          <div class="hl-card"><div class="hl-icon">🛠️</div><div class="hl-num">102h</div><div class="hl-title">志愿服务时长</div><div class="hl-desc">i志愿累计102小时，组织多项校内外志愿活动</div></div>
+        </div>
+      </div></div>
+      <div class="hl-dots" id="hlDots">
+        <button class="active" onclick="goHL(0)"></button>
+        <button onclick="goHL(1)"></button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- JOB MATCH -->
+<!-- JOB MATCH 玫瑰底 -->
 <section id="match">
   <div class="container">
-    <div class="section-header">
-      <div class="icon">🤖</div>
-      <h2>智能岗位匹配</h2>
-      <p>粘贴目标岗位JD，自动分析匹配度 · 生成专属应聘摘要</p>
-    </div>
-
-    <div class="match-wrapper">
+    <div class="section-header"><div class="icon">🤖</div><h2>智能岗位匹配</h2><p>快速测试 · 粘贴JD · 自动分析匹配度 · 生成应聘摘要</p></div>
+    <div class="match-box">
+      <div class="section-label">快速体验</div>
+      <div class="match-tags-row" id="quickTags">
+        <button class="match-tag" onclick="quickMatch('行政专员','1. 负责日常行政事务协调与档案管理\n2. 熟练使用Office办公软件\n3. 具备良好的沟通能力和服务意识\n4. 协助组织会议及活动')">🏢 行政专员</button>
+        <button class="match-tag" onclick="quickMatch('教务处文员','1. 负责教务日常管理及学籍档案处理\n2. 协助毕业生论文审核与材料归档\n3. 具备高校教务管理经验\n4. 工作严谨细致，有责任心')">📚 教务处文员</button>
+        <button class="match-tag" onclick="quickMatch('人事专员','1. 负责招聘全流程：简历筛选、面试安排\n2. 员工入离职手续及档案管理\n3. 人力资源相关专业优先\n4. 具备良好的组织协调和沟通能力')">💼 人事专员</button>
+      </div>
+      <div class="section-label">或自定义岗位</div>
       <input type="text" id="jobTitle" placeholder="岗位名称（如：行政专员、教务处文员）">
       <textarea id="jdInput" placeholder="在此粘贴完整的岗位JD（岗位职责 + 任职要求）..."></textarea>
       <button class="match-btn" onclick="analyze()">🔍 开始智能分析</button>
-
       <div class="match-result" id="result">
         <div class="score" id="scoreDisplay"></div>
-        <h4>✅ 匹配优势</h4>
-        <ul id="strengths"></ul>
-        <h4>📝 可优化方向</h4>
-        <ul id="improvements"></ul>
+        <div class="score-bar"><div class="fill" id="scoreBar" style="width:0%"></div></div>
+        <div class="tag-strip" id="tagStrip"></div>
+        <h4>✅ 匹配优势</h4><ul id="strengths"></ul>
+        <h4>📝 可优化方向</h4><ul id="improvements"></ul>
         <h4>📋 专属应聘摘要</h4>
         <div class="summary-box" id="summary"></div>
       </div>
@@ -573,26 +580,20 @@
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" style="background:var(--white);">
+<!-- CONTACT 浅蓝底 -->
+<section id="contact">
   <div class="container">
-    <div class="section-header">
-      <div class="icon">📬</div>
-      <h2>联系我</h2>
-      <p>期待与您的进一步沟通</p>
-    </div>
-
+    <div class="section-header"><div class="icon">📬</div><h2>联系我</h2><p>期待与您的进一步沟通</p></div>
     <div class="contact-grid">
       <div class="contact-card">
         <h3>📮 基本信息</h3>
         <div class="row"><span class="key">姓名</span> 黎永恩</div>
         <div class="row"><span class="key">政治面貌</span> 中共党员</div>
         <div class="row"><span class="key">届别</span> 2026届本科应届生</div>
-        <div class="row"><span class="key">到岗</span> 最早2026年5月</div>
+        <div class="row"><span class="key">到岗</span> 最早2026年6月</div>
         <div class="row"><span class="key">现居</span> 广东佛山</div>
-        <div class="row"><span class="key">证书</span> CET-4、普通话二甲、C1驾照</div>
+        <div class="row"><span class="key">证书</span> CET-4 / 普通话二甲 / C1驾照</div>
       </div>
-
       <div class="contact-card">
         <h3>🎯 求职意向</h3>
         <div class="row"><span class="key">目标岗位</span> 行政专员 / 教务处文员 / 人事专员</div>
@@ -600,99 +601,82 @@
         <div class="row"><span class="key">意向城市</span> 广州 · 佛山 · 深圳</div>
         <div class="row"><span class="key">职业方向</span> 先入行HR → 转型HRBP</div>
       </div>
-
       <div class="contact-card">
         <h3>📚 深造规划</h3>
-        <div class="row"><span class="key">目标</span> 双证在职研究生（非单证）</div>
+        <div class="row"><span class="key">目标</span> 双证在职研究生</div>
         <div class="row"><span class="key">方向</span> 人力资源管理 / 工商管理</div>
-        <div class="row"><span class="key">备考状态</span> 应届考研首经贸后，计划申请在职研究生</div>
+        <div class="row"><span class="key">状态</span> 先就业再深造</div>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  © 2026 黎永恩 · 个人主页 · Powered by GitHub Pages
-</footer>
+<footer>© 2026 黎永恩 · 个人主页 · Powered by GitHub Pages</footer>
 
 <script>
+/* ===== 三个轮播管理器 ===== */
+const carousels = {
+  skills: { track:'skillsTrack', dots:'skillsDots', current:0, total:2, prefix:'skillsDots' },
+  awards: { track:'avTrack', dots:'avDots', current:0, total:2, prefix:'avDots' },
+  hl:     { track:'hlTrack', dots:'hlDots', current:0, total:2, prefix:'hlDots' },
+};
+
+function updateCarousel(name) {
+  const c = carousels[name];
+  document.getElementById(c.track).style.transform = `translateX(-${c.current * 100}%)`;
+  const dots = document.getElementById(c.dots).querySelectorAll('button');
+  dots.forEach((btn, i) => btn.classList.toggle('active', i === c.current));
+}
+
+function moveSkills(dir)  { const c=carousels.skills; c.current=(c.current+dir+c.total)%c.total; updateCarousel('skills'); }
+function goSkills(idx)    { carousels.skills.current=idx; updateCarousel('skills'); }
+function moveAwards(dir)  { const c=carousels.awards; c.current=(c.current+dir+c.total)%c.total; updateCarousel('awards'); }
+function goAwards(idx)    { carousels.awards.current=idx; updateCarousel('awards'); }
+function moveHL(dir)      { const c=carousels.hl; c.current=(c.current+dir+c.total)%c.total; updateCarousel('hl'); }
+function goHL(idx)        { carousels.hl.current=idx; updateCarousel('hl'); }
+
+// 自动轮播
+setInterval(() => { moveAwards(1); }, 5000);
+setInterval(() => { moveHL(1); }, 6000);
+
+/* ===== 岗位匹配 ===== */
+function quickMatch(title, jd) {
+  document.getElementById('jobTitle').value = title;
+  document.getElementById('jdInput').value = jd;
+  document.querySelectorAll('.match-tag').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
 function analyze() {
-  const title = document.getElementById('jobTitle').value.trim();
-  const jd = document.getElementById('jdInput').value.trim();
-  const result = document.getElementById('result');
-  
-  if (!title || !jd) {
-    alert('请填写岗位名称和JD内容');
-    return;
-  }
-
-  // 解析 JD 关键词
-  const jdLower = jd.toLowerCase();
-  
-  // 候选人的核心能力库
-  const strengthsAll = [];
-  const improveAll = [];
-
-  // 行政/文员类
-  if (/行政|文员|文书|档案|公文|事务|协调|沟通|接待/.test(jd)) {
-    strengthsAll.push('教务助理经历：审核300+份论文，精通批量文档处理与档案管理');
-    strengthsAll.push('Office全套精通：PPT制作经验丰富，曾独立制作内部培训课件');
-    strengthsAll.push('沟通协调能力强：青年志愿者协会会长，管理70+人团队');
-  }
-  
-  // 人事/HR类
-  if (/招聘|面试|人力|员工|入职|离职|薪酬|绩效|培训|HR/.test(jd)) {
-    strengthsAll.push('3个月HR实习经验：盈宇社工服务中心，涵盖招聘全流程');
-    strengthsAll.push('人力资源管理专业科班：GPA 3.83，综测排名2/31');
-    strengthsAll.push('专业对口的毕业论文方向：AI素养对创新行为的影响');
-  }
-
-  // 教务类
-  if (/教务|教学|课程|考试|成绩|学籍|毕业|论文/.test(jd)) {
-    strengthsAll.push('1年+教务助理实战经验，熟悉教务管理全流程');
-    strengthsAll.push('严谨细致：300+份论文材料审核零差错');
-    strengthsAll.push('商学院背景，理解高等教育管理逻辑');
-  }
-
-  // 通用匹配
-  if (/党员/.test(jd)) strengthsAll.push('中共党员，政治素质过硬');
-  if (/组织|策划|活动/.test(jd)) strengthsAll.push('组织策划经验丰富：品牌策划挑战赛全国二等奖');
-  if (/新媒体|公众号|运营/.test(jd)) strengthsAll.push('新媒体运营实操经验：小红书单篇浏览量2万+');
-  if (/团队|协作|合作/.test(jd)) strengthsAll.push('学生组织管理经验：青协会长+团支书双重职务');
-  if (/英语/.test(jd)) strengthsAll.push('英语竞赛获奖5项，CET-4');
-  if (/数据分析|SPSS|问卷|调研/.test(jd)) strengthsAll.push('SPSS数据分析+问卷设计+论文写作全流程能力');
-
-  // 去重
-  const strengths = [...new Set(strengthsAll)].slice(0, 6);
-
-  // 改进建议
-  if (/硕士|研究生/.test(jd) && !/在职/.test(jd)) improveAll.push('该岗位要求硕士学历，建议关注同期招聘的在职研究生项目作为补充');
-  if (/CET-6|六级/.test(jd)) improveAll.push('该岗位要求CET-6，目前持有CET-4，建议下半年报考CET-6');
-  if (/2年|两年|3年|三年|经验/.test(jd)) improveAll.push('该岗位有一定年限经验要求，面试时可重点强调实习和校园实践的含金量');
-  if (/数据分析|Python|SQL|Excel 高级/.test(jd) && !/SPSS/.test(jd)) improveAll.push('该岗位对数据分析工具有更高要求，可在简历中补充SPSS实操经验');
-  if (improveAll.length === 0) improveAll.push('基本满足岗位要求，面试准备充分即可');
-
-  // 计算匹配分
-  let score = Math.min(95, 55 + strengths.length * 7 + (improveAll.length <= 1 ? 8 : 0));
-
-  // 渲染结果
-  document.getElementById('scoreDisplay').innerHTML = `${score}<span> 分</span>`;
-  
-  const ul_s = document.getElementById('strengths');
-  ul_s.innerHTML = strengths.map(s => `<li>${s}</li>`).join('');
-  
-  const ul_i = document.getElementById('improvements');
-  ul_i.innerHTML = improveAll.map(s => `<li>${s}</li>`).join('');
-  
-  const summary = `作为2026届人力资源管理专业应届生，我针对「${title}」岗位的核心优势在于：` +
-    strengths.slice(0, 3).map(s => s.split('：')[1] || s).join('；') +
-    `。配合GPA 3.83/5、综测排名2/31的学业基础，以及中共党员的政治素质，我相信能胜任该岗位并快速成长。`;
-  
-  document.getElementById('summary').textContent = summary;
-  result.style.display = 'block';
-  result.scrollIntoView({ behavior: 'smooth' });
+  const title=document.getElementById('jobTitle').value.trim();
+  const jd=document.getElementById('jdInput').value.trim();
+  const result=document.getElementById('result');
+  if(!title||!jd){alert('请填写岗位名称和JD内容');return;}
+  const s=[], im=[], tags=[];
+  if(/行政|文员|文书|档案|公文|事务|协调|沟通|接待/.test(jd)){s.push('教务助理经历：审核300+份论文，精通批量文档处理与档案管理');s.push('Office全套精通：PPT制作经验丰富，曾独立制作内部培训课件');s.push('沟通协调能力强：青协会长，管理70+人团队');tags.push('📁 行政能力');tags.push('📄 文档管理');}
+  if(/招聘|面试|人力|员工|入职|离职|薪酬|绩效|培训|HR/.test(jd)){s.push('3个月HR实习经验：盈宇社工服务中心，涵盖招聘全流程');s.push('人力专业科班：GPA 3.83，综测2/31');s.push('毕业论文方向：AI素养对创新行为的影响');tags.push('👥 HR经验');tags.push('🎓 专业对口');}
+  if(/教务|教学|课程|考试|成绩|学籍|毕业|论文/.test(jd)){s.push('1年+教务助理实战经验，熟悉教务全流程');s.push('严谨细致：300+份论文审核零差错');tags.push('🏫 教务经验');tags.push('✅ 严谨细致');}
+  if(/党员/.test(jd)){s.push('中共党员，政治素质过硬');tags.push('🔴 中共党员');}
+  if(/组织|策划|活动/.test(jd)){s.push('组织策划经验：品牌策划挑战赛全国二等奖');tags.push('🎯 活动策划');}
+  if(/新媒体|公众号|运营/.test(jd)){s.push('新媒体运营实操：小红书单篇浏览量2万+');tags.push('📱 新媒体');}
+  if(/团队|协作|合作/.test(jd)){s.push('学生组织管理：青协会长+团支书双重职务');tags.push('🤝 团队协作');}
+  if(/英语/.test(jd)){s.push('英语竞赛获奖5项，CET-4');tags.push('🌐 英语能力');}
+  if(/数据|分析|SPSS|问卷|调研/.test(jd)){s.push('SPSS数据分析+问卷设计+论文写作全流程');tags.push('📊 数据分析');}
+  const strengths=[...new Set(s)].slice(0,6);
+  const tagList=[...new Set(tags)];
+  if(/硕士|研究生/.test(jd)&&!/在职/.test(jd))im.push('该岗位要求硕士学历，建议关注同期在职研究生项目');
+  if(/CET-6|六级/.test(jd))im.push('该岗位要求CET-6，目前持有CET-4，建议下半年报考');
+  if(/2年|两年|3年|三年|经验/.test(jd))im.push('有一定年限经验要求，面试时重点强调实习含金量');
+  if(!im.length)im.push('基本满足岗位要求，面试准备充分即可');
+  const score=Math.min(95,55+strengths.length*7+(im.length<=1?8:0));
+  document.getElementById('scoreDisplay').innerHTML=`${score}<span> 分</span>`;
+  document.getElementById('scoreBar').style.width=score+'%';
+  document.getElementById('tagStrip').innerHTML=tagList.map(t=>`<span>${t}</span>`).join('');
+  document.getElementById('strengths').innerHTML=strengths.map(s=>`<li>${s}</li>`).join('');
+  document.getElementById('improvements').innerHTML=im.map(s=>`<li>${s}</li>`).join('');
+  document.getElementById('summary').textContent=`作为2026届人力资源管理专业应届生，我针对「${title}」岗位的核心优势在于：${strengths.slice(0,3).map(s=>s.split('：')[1]||s).join('；')}。配合GPA 3.83/5、综测排名2/31的学业基础，以及中共党员的政治素质，我相信能胜任该岗位并快速成长。`;
+  result.style.display='block'; result.scrollIntoView({behavior:'smooth'});
 }
 </script>
-
 </body>
 </html>
